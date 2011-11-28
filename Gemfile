@@ -31,3 +31,5 @@ gem 'unicorn'
 # end
 
 gem 'paperclip'
+
+gem 'devise'
