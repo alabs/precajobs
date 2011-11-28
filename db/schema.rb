@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111128180945) do
+ActiveRecord::Schema.define(:version => 20111128181622) do
 
   create_table "offers", :force => true do |t|
     t.string   "link"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(:version => 20111128180945) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "screenshot_file_name"
+    t.string   "screenshot_content_type"
+    t.integer  "screenshot_file_size"
   end
 
 end

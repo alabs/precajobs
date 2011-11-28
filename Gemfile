@@ -30,3 +30,4 @@ gem 'unicorn'
 #   gem 'webrat'
 # end
 
+gem 'paperclip'
