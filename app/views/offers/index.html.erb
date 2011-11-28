@@ -1,27 +1,29 @@
-<h1>Listing offers</h1>
+<h1>Mostrando ofertas</h1>
 
-<table>
-  <tr>
-    <th>Link</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="zebra-striped">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Resumen</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<% @offers.each do |offer| %>
-  <tr>
-    <td><%= offer.link %></td>
-    <td><%= offer.title %></td>
-    <td><%= offer.description %></td>
-    <td><%= link_to 'Show', offer %></td>
-    <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
-    <td><%= link_to 'Destroy', offer, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <tbody>
+  <% @offers.each do |offer| %>
+    <tr>
+      <td><%= link_to offer.title, offer.link %></td>
+      <td><%= offer.description %></td>
+      <td><%= link_to 'Comentar', offer, :class => "btn primary" %></td>
+      <td><%= link_to 'Editar', edit_offer_path(offer), :class => "btn primary" %></td>
+      <td><%= link_to 'Borrar', offer, :confirm => 'Are you sure?', :method => :delete, :class => "btn danger" %></td>
+    </tr>
+  <% end %>
+  </tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Offer', new_offer_path %>
+<%= link_to 'Oferta nueva', new_offer_path, :class => "btn success" %>
