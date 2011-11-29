@@ -33,3 +33,5 @@ gem 'unicorn'
 gem 'paperclip'
 
 gem 'devise'
+
+gem 'nokogiri'

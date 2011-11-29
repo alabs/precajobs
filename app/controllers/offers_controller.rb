@@ -40,6 +40,9 @@ class OffersController < ApplicationController
   # POST /offers
   # POST /offers.xml
   def create
+    if link.include?("www.infojobs.net")
+      processed = offer_process('infojobs', link)
+    end
     @offer = Offer.new(params[:offer])
 
     respond_to do |format|
