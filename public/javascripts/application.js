@@ -17,9 +17,21 @@ $(function() {
     var offer_id = raw[2];
     var url = "/offers/" + offer_id + "/voting";
     var params = { direction: direction };
-    $.post(url, params, function(data) {
-      console.log('fucker');
-      console.log(data.result);
-    }); // post
+$.ajax({
+        type: "POST",
+        async: true,
+        url: '/offers/1/voting',
+        data:  { 'direction': 'up' },
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (msg) 
+                { alert('success') },
+        error: function (err)
+        { alert('what?'), alert(err.responseText)}
+    });
+
+//    $.post(url, params, function(data) {
+//      alert(data);
+//    }); // post
   }); // click
 }); // function
