@@ -19,13 +19,19 @@
             <li class="active"><%= link_to "Ofertas", offers_path %></li>
           </ul>
           <ul class="nav secondary-nav">
-            <li class="dropdown">
+          <% if user_signed_in? %>
+            <li>
+            <%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete) %>        
+            </li>
+          <% else %>
+            <li class="dropdown"> 
               <a class="dropdown-toggle" href="#">Usuarios</a>
               <ul class="dropdown-menu">
-                <li><a href="#">Registro</a></li>
-                <li><a href="#">Iniciar sesión</a></li>
+                <li><%= link_to "Registro", new_user_registration_path %></li>
+                <li><%= link_to "Iniciar sesión", new_user_session_path %></a></li>
               </ul>
             </li>
+          <% end %>
           </ul>
         </div>
       </div><!-- /topbar-inner -->
