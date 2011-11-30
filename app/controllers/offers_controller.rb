@@ -96,4 +96,14 @@ class OffersController < ApplicationController
     votes = offer.votes_for - offer.votes_against
     render :json => "{'result' => 'OK', 'votes': #{votes}}"
   end
+
+  # POST /offers/1/comment
+  def comment
+    @offer = Offer.find(params[:id])
+    logger.info @offer
+    logger.info params
+    Comment.create(:user_id => current_user.id, :offer_id => @offer.id, :body => params[:comment][:body])
+    redirect_to(@offer, :notice => 'Comment was successfully created.')
+  end
+
 end

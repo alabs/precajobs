@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :comments
+
   acts_as_voter
 
   # Include default devise modules. Others available are:

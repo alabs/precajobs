@@ -4,6 +4,7 @@ Precajobs::Application.routes.draw do
 
   resources :offers do 
     post 'voting', :on => :member
+    post 'comment', :on => :member
   end
 
   root :to => "offers#index"
