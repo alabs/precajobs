@@ -1,4 +1,7 @@
 class OffersController < ApplicationController
+  # FIXME: this shouldn't be here
+  skip_before_filter :verify_authenticity_token, :only => [:voting]
+
   # GET /offers
   # GET /offers.xml
   def index
@@ -82,5 +85,18 @@ class OffersController < ApplicationController
       format.html { redirect_to(offers_url) }
       format.xml  { head :ok }
     end
+  end
+
+  # POST /offers/1/voting
+  def voting 
+    offer = Offer.find(params[:id])
+    user = current_user
+    if params[:direction] == 'up'
+      current_user.vote_exclusively_for(offer)
+    elsif params[:direction] == 'down'
+      current_user.vote_exclusively_against(offer)
+    end
+    votes = offer.votes_for - offer.votes_against
+    render :json => "{'result' => 'OK', 'votes': #{votes}}"
   end
 end

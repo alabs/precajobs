@@ -3,6 +3,7 @@
 <table class="zebra-striped">
   <thead>
     <tr>
+      <th>¿Es precaria?</th>
       <th>Título</th>
       <th>Resumen</th>
       <th></th>
@@ -14,6 +15,12 @@
   <tbody>
   <% @offers.each do |offer| %>
     <tr>
+      <td>
+        <%= link_to (image_tag "upvote.png"), '#', :class => "vote", :id => "up-offer-"+ offer.id.to_s %> <br />
+        <%= link_to (image_tag "downvote.png"), '#', :class => "vote", :id => "down-offer-"+ offer.id.to_s %><br />
+ 	<div id="votes-count"><%= offer.votes_for - offer.votes_against %>
+        </div>
+      </td>
       <td><%= link_to offer.title, offer.link %></td>
       <td><%= offer.summary %></td>
       <td><%= link_to 'Comentar', offer, :class => "btn primary" %></td>

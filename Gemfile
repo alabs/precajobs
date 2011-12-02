@@ -35,3 +35,5 @@ gem 'paperclip'
 gem 'devise'
 
 gem 'nokogiri'
+
+gem 'thumbs_up'
