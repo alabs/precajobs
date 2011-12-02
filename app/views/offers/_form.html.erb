@@ -23,27 +23,28 @@
     </div>
   
     <div class="clearfix">
+      <%= f.label :summary, "Resumen" %>
+      <div class="input">
+        <%= f.text_area :summary, :rows => "10", :class => "span10" %>
+      </div>
+    </div>
+
+    <div class="clearfix hidden">
       <%= f.label :title, "Título" %>
       <div class="input">
         <%= f.text_field :title, :class => "span10" %>
       </div>
     </div>
 
-    <div class="clearfix">
-      <%= f.label :summary, "Resumen" %>
-      <div class="input">
-        <%= f.text_area :summary, :rows => "10", :class => "span10" %>
-      </div>
-    </div>
   
-    <div class="clearfix">
+    <div class="clearfix hidden">
       <%= f.label :description, "Descripción" %>
       <div class="input">
         <%= f.text_area :description, :rows => "20", :class => "span10" %>
       </div>
     </div>
   
-    <div class="clearfix">
+    <div class="clearfix hidden">
       <%= f.label :screenshot, "Pantallazo" %>
       <div class="input">
         <%= f.file_field :screenshot %>
