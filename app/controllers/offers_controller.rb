@@ -47,12 +47,20 @@ class OffersController < ApplicationController
   # POST /offers.xml
   def create
     link = params[:offer][:link]
+
     if link.include?("www.infojobs.net")
+      # process information
       result = process_offer("infojobs", link)
       params[:offer][:title] = result["title"]
       params[:offer][:description] = result["description"]
     end
+
     @offer = Offer.new(params[:offer])
+
+    # process the screenshot
+    filename = "/tmp/" + result["title"].gsub(/\s+/, "") + ".png"
+    screenchot(link, filename)
+    @offer.screenshot = File.new(filename)
 
     respond_to do |format|
       if @offer.save
