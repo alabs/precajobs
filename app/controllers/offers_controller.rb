@@ -2,6 +2,9 @@ class OffersController < ApplicationController
   # FIXME: this shouldn't be here
   skip_before_filter :verify_authenticity_token, :only => [:voting]
 
+  require 'process_offer'
+  require 'screenchot'
+
   # GET /offers
   # GET /offers.xml
   def index
@@ -43,8 +46,11 @@ class OffersController < ApplicationController
   # POST /offers
   # POST /offers.xml
   def create
+    link = params[:offer][:link]
     if link.include?("www.infojobs.net")
-      processed = offer_process('infojobs', link)
+      result = process_offer("infojobs", link)
+      params[:offer][:title] = result["title"]
+      params[:offer][:description] = result["description"]
     end
     @offer = Offer.new(params[:offer])
 
