@@ -1,6 +1,4 @@
 class OffersController < ApplicationController
-  # FIXME: this shouldn't be here
-  skip_before_filter :verify_authenticity_token, :only => [:voting]
 
   require 'process_offer'
   require 'screenchot'
@@ -111,6 +109,10 @@ class OffersController < ApplicationController
       current_user.vote_exclusively_against(offer)
     end
     votes = offer.votes_for - offer.votes_against
-    render :json => "{'result' => 'OK', 'votes': #{votes}}"
+
+    respond_to do |format|
+      format.json { render :json => "{'result' => 'OK', 'votes': #{votes}}" }
+    end
   end
+
 end
