@@ -1,7 +1,7 @@
 class Offer < ActiveRecord::Base
 
-  require 'process_offer'
-  require 'screenchot'
+  validates :link, :uniqueness => true
+  validates :link, :summary, :presence => true
 
   acts_as_voteable
 
@@ -12,6 +12,9 @@ class Offer < ActiveRecord::Base
       :small  => "300x300>" }
 
   before_create do |offer| 
+
+    require 'process_offer'
+    require 'screenchot'
 
     # process information
     if offer.link.include?("www.infojobs.net")
