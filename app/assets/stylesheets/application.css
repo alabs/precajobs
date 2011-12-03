@@ -21,13 +21,12 @@
 }
 
 #header #logo a{
-   color: #FFFFFF;
-    float: left;
-    font-size: 50px;
-    font-weight: normal;
-    letter-spacing: -3px;
-    text-decoration: none;
-
+  color: #FFFFFF;
+  float: left;
+  font-size: 50px;
+  font-weight: normal;
+  letter-spacing: -3px;
+  text-decoration: none;
 }
 
 #header #slogan {
@@ -39,4 +38,8 @@
   margin-left: 12px;
   margin-top: 24px;
   padding-left: 4px; 
+}
+
+.screenshot {
+  margin: 2em;
 }

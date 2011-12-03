@@ -1,33 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<div id="content">
+<div id="content" class="full">
 
-<p>
-  <b>Link:</b>
-  <%= @offer.link %>
-</p>
+ <h1><%= link_to @offer.title, @offer.link %></h1>
 
-<p>
-  <b>Title:</b>
-  <%= @offer.title %>
-</p>
-
-<p>
-  <b>Screenshot:</b>
-  <%= link_to(image_tag(@offer.screenshot.url(:thumb)), @offer.screenshot.url ) %>
-</p>
-
-<p>
-  <b>Summary:</b>
-  <%= @offer.summary %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @offer.description %>
-</p>
-
+ <%= link_to(image_tag(@offer.screenshot.url(:thumb), :class => "left"), @offer.screenshot.url, :class => "left screenshot" ) %>
+ <div class="right"><%= @offer.summary %></div>
+  
+  <p class="left">
+    <%= @offer.description %>
+  </p>
 
 </div>
 
-<%= link_to 'Edit', edit_offer_path(@offer) %> |
