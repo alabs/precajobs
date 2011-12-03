@@ -1,0 +1,26 @@
+
+version 0.1 
+===========
+
+* Voting AJAX doesn't work
+* Offer show style
+* Black buttons (for primary btn bootstrap)
+* Comments
+* JS to show all the form for another kind of websites (no infojobs)
+* nokogiri for monster and infolancer
+* check valid URL for link
+* Registration: CSS for singup, signin and forgot
+* Registration: email validation
+* Registration: ask for a nickname to show in comments and offers
+* cancan for creating an offer, commenting and voting
+* Alerts pretty styles
+* Worst offers (order by voting)
+* Last offers (order by date)
+* List offers style
+
+version 0.2
+===========
+
+* omniauth
+* gravatar
+* FB/twitter/G+ shares
