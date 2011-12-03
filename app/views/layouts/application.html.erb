@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PrecaJobs</title>
-  <%# stylesheet_link_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" %>
+  <title>precajobs | encuentra tu trabajo precario</title>
+  <%= stylesheet_link_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" %>
   <%= stylesheet_link_tag "inception" %>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap-dropdown.js" %>
   <%= csrf_meta_tag %>
@@ -11,29 +12,29 @@
 <body>
 
 <div id="container">
-	<div id="header">
-    	<h1><a href="/">precajobs</a></h1>
-        <h2>encuentra tu trabajo precario</h2>
-        <div class="clear"></div>
-    </div>
-    <div id="nav">
-      <ul>
-       	<li><%= link_to "Ofertas", offers_path %></li>
-       	<li><%= link_to "Agregar", new_offer_path %></li>
-	<ul class="right">
-          <% if user_signed_in? %>
-            <li><%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete) %></li>
-          <% else %>
-            <li><%= link_to "Registro", new_user_registration_path %></li>
-            <li><%= link_to "Iniciar sesión", new_user_session_path %></a></li>
-          <% end %>
-        </ul>
+  <div id="header">
+    <span id="logo"><a href="/">precajobs</a></span>
+    <span id="slogan">encuentra tu trabajo precario</span>
+    <div class="clear"></div>
+  </div>
+  <div id="nav">
+    <ul>
+      <li><%= link_to "Ofertas", offers_path %></li>
+      <li><%= link_to "Agregar", new_offer_path %></li>
+      <ul class="right">
+        <% if user_signed_in? %>
+          <li><%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete) %></li>
+        <% else %>
+          <li><%= link_to "Registro", new_user_registration_path %></li>
+          <li><%= link_to "Iniciar sesión", new_user_session_path %></a></li>
+        <% end %>
       </ul>
-    </div>
-    <div id="body">
-      <%= yield %>
-      <div class="clear"></div>
-    </div>
+    </ul>
+  </div>
+  <div id="body">
+    <%= yield %>
+    <div class="clear"></div>
+  </div>
 </div>
 
 <div id="footer">

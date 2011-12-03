@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'nokogiri'
 
 def process_offer(site, url)
   case site

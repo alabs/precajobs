@@ -1,0 +1,42 @@
+.hidden {
+  display:none;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.full {
+  width: 98% !important ;
+}
+
+#header #logo{
+  color: #000000;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 35px;
+}
+
+#header #logo a{
+   color: #FFFFFF;
+    float: left;
+    font-size: 50px;
+    font-weight: normal;
+    letter-spacing: -3px;
+    text-decoration: none;
+
+}
+
+#header #slogan {
+  color: #FFE0CC;
+  float: left;
+  font-family: Georgia,"Times New Roman",Times,serif;
+  font-size: 13px;
+  letter-spacing: 0;
+  margin-left: 12px;
+  margin-top: 24px;
+  padding-left: 4px; 
+}

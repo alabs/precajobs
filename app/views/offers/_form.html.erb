@@ -1,4 +1,4 @@
-<div class="span12">
+<div id="content">
   <%= form_for @offer, :html => { :multipart => true } do |f| %>
     <% if @offer.errors.any? %>
       <div id="error_explanation">
@@ -16,23 +16,23 @@
     <legend><%= formtype %> oferta precaria</legend>
   
     <div class="clearfix">
-      <%= f.label :link, "Enlace" %>
+      <%= f.label :link, "Direccion (URL)" %>
       <div class="input">
-        <%= f.text_field :link, :class => "span10" %>
+        <%= f.text_field :link, :class => "span7" %>
       </div>
     </div>
   
     <div class="clearfix">
       <%= f.label :summary, "Resumen" %>
       <div class="input">
-        <%= f.text_area :summary, :rows => "10", :class => "span10" %>
+        <%= f.text_area :summary, :rows => "10", :class => "span7" %>
       </div>
     </div>
 
     <div class="clearfix hidden">
       <%= f.label :title, "Título" %>
       <div class="input">
-        <%= f.text_field :title, :class => "span10" %>
+        <%= f.text_field :title, :class => "span7" %>
       </div>
     </div>
 
@@ -40,7 +40,7 @@
     <div class="clearfix hidden">
       <%= f.label :description, "Descripción" %>
       <div class="input">
-        <%= f.text_area :description, :rows => "20", :class => "span10" %>
+        <%= f.text_area :description, :rows => "20", :class => "span7" %>
       </div>
     </div>
   
@@ -49,4 +49,10 @@
     </div>
   </fieldset>
   <% end %>
+</div>
+
+<div class="sidebar">
+  <ul>
+    <li>Pon la <b>dirección de la oferta (URL)</b> junto con un <b>resumen</b>. Si es de un sitio que conozcamos traeremos los datos y un pantallazo.</li>
+  </ul>
 </div>
