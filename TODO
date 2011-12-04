@@ -5,7 +5,6 @@ version 0.1
 * Voting AJAX doesn't work
 * Comments
 * nokogiri for monster and infolancer
-* Registration: CSS for singup, signin and forgot
 * Registration: email validation
 * Registration: ask for a nickname to show in comments and offers
 * cancan for creating an offer, commenting and voting

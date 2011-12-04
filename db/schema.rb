@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111129100331) do
+ActiveRecord::Schema.define(:version => 20111204094122) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "offer_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "offers", :force => true do |t|
     t.string   "link"
@@ -21,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20111129100331) do
     t.string   "screenshot_file_name"
     t.string   "screenshot_content_type"
     t.integer  "screenshot_file_size"
+    t.datetime "screenshot_updated_at"
     t.text     "summary"
   end
 
@@ -37,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20111129100331) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
