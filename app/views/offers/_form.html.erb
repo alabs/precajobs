@@ -1,4 +1,4 @@
-<div class="span12">
+<div id="content">
   <%= form_for @offer, :html => { :multipart => true } do |f| %>
     <% if @offer.errors.any? %>
       <div id="error_explanation">
@@ -16,37 +16,35 @@
     <legend><%= formtype %> oferta precaria</legend>
   
     <div class="clearfix">
-      <%= f.label :link, "Enlace" %>
+      <%= f.label :link, "Direccion (URL)" %>
       <div class="input">
-        <%= f.text_field :link, :class => "span10" %>
+        <%= f.text_field :link, :class => "span7", :autofocus => "autofocus" %>
+        <span class="add-on">
+          <%= image_tag "ok.gif", :id => "ok", :style => "vertical-align:middle;", :class => "hidden" %>
+          <%= image_tag "ko.gif", :id => "ko", :style => "vertical-align:middle;", :class => "hidden" %>
+        </span>
       </div>
     </div>
   
-    <div class="clearfix">
-      <%= f.label :title, "Título" %>
-      <div class="input">
-        <%= f.text_field :title, :class => "span10" %>
-      </div>
-    </div>
-
     <div class="clearfix">
       <%= f.label :summary, "Resumen" %>
       <div class="input">
-        <%= f.text_area :summary, :rows => "10", :class => "span10" %>
+        <%= f.text_area :summary, :rows => "10", :class => "span7" %>
       </div>
     </div>
+
+    <div class="clearfix hidden">
+      <%= f.label :title, "Título" %>
+      <div class="input">
+        <%= f.text_field :title, :class => "span7" %>
+      </div>
+    </div>
+
   
-    <div class="clearfix">
+    <div class="clearfix hidden">
       <%= f.label :description, "Descripción" %>
       <div class="input">
-        <%= f.text_area :description, :rows => "20", :class => "span10" %>
-      </div>
-    </div>
-  
-    <div class="clearfix">
-      <%= f.label :screenshot, "Pantallazo" %>
-      <div class="input">
-        <%= f.file_field :screenshot %>
+        <%= f.text_area :description, :rows => "20", :class => "span7" %>
       </div>
     </div>
   
@@ -55,4 +53,15 @@
     </div>
   </fieldset>
   <% end %>
+</div>
+
+<div class="sidebar">
+  <ul>
+    <li>Pon la <b>dirección de la oferta (URL)</b> junto con un <b>resumen</b>. Si es de un sitio que conozcamos traeremos los datos y un pantallazo.</li>
+    <li id="loading" class="hidden">
+      Procesando información y pantallazo
+      <%= image_tag "spinner-big.gif", :class => "center spinner" %>
+      <i>Estamos trabajando en ellou</i>
+    </li>
+  </ul>
 </div>

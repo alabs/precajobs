@@ -1,4 +1,8 @@
 class Offer < ActiveRecord::Base
+
+  validates :link, :uniqueness => true
+  validates :link, :summary, :presence => true
+
   acts_as_voteable
 
   has_many :comments
@@ -12,8 +16,28 @@ class Offer < ActiveRecord::Base
   # Paperclip
   has_attached_file :screenshot,
     :styles => {
-      :thumb=> "100x100#",
-      :small  => "150x150>" 
-  }
+      :thumb=> "200x200#",
+      :small  => "300x300>" }
+
+  before_create do |offer| 
+
+    require 'process_offer'
+    require 'iconv'
+    require 'screenchot'
+
+    # process information
+    if offer.link.include?("www.infojobs.net")
+      result = process_offer("infojobs", offer.link)
+      offer.title = result["title"]
+      offer.description = result["description"]
+    end
+
+    # process the screenshot
+    title = Iconv.new('ascii//translit', 'utf-8').iconv(result["title"])
+    filename = "/tmp/" + title.gsub(/\s+/, "") + ".png"
+    screenchot(link, filename)
+    offer.screenshot = File.new(filename)
+
+  end
 
 end

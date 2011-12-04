@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PrecaJobs</title>
+  <title>precajobs | encuentra tu trabajo precario</title>
   <%= stylesheet_link_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" %>
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" %>
-  <%= javascript_include_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap-dropdown.js" %>
+  <%= stylesheet_link_tag "inception" %>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap-dropdown.js" %>
   <%= csrf_meta_tag %>
 </head>
-<body style="padding-top: 60px;">
+<body>
 
-<div style="z-index: 5;" class="topbar-wrapper">
-    <div data-dropdown="dropdown" class="topbar">
-      <div class="topbar-inner">
-        <div class="container">
-          <h3><a href="/">PrecaJobs</a></h3>
-          <ul class="nav">
-            <li class="active"><%= link_to "Ofertas", offers_path %></li>
-          </ul>
-          <ul class="nav secondary-nav">
-          <% if user_signed_in? %>
-            <li>
-            <%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete) %>        
-            </li>
-          <% else %>
-            <li class="dropdown"> 
-              <a class="dropdown-toggle" href="#">Usuarios</a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Registro", new_user_registration_path %></li>
-                <li><%= link_to "Iniciar sesión", new_user_session_path %></a></li>
-              </ul>
-            </li>
-          <% end %>
-          </ul>
-        </div>
-      </div><!-- /topbar-inner -->
-    </div><!-- /topbar -->
+<div id="container">
+  <div id="header">
+    <span id="logo"><a href="/">precajobs</a></span>
+    <span id="slogan">encuentra tu trabajo precario</span>
+    <div class="clear"></div>
   </div>
+  <div id="nav">
+    <ul>
+      <li><%= link_to "Ofertas", offers_path %></li>
+      <li><%= link_to "Agregar", new_offer_path %></li>
+      <ul class="right">
+        <% if user_signed_in? %>
+          <li><%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete) %></li>
+        <% else %>
+          <li><%= link_to "Registro", new_user_registration_path %></li>
+          <li><%= link_to "Iniciar sesión", new_user_session_path %></a></li>
+        <% end %>
+      </ul>
+    </ul>
+  </div>
+  <div id="body">
+    <%= yield %>
+    <div class="clear"></div>
+  </div>
+</div>
 
-<div class="container">
-  <%= yield %>
+<div id="footer">
+  <div class="footer-content">
+    <div class="footer-width">
+      <span class="sitename">precajobs</span>
+        <p class="footer-links">
+          <%= link_to "Ofertas", offers_path %> |
+          <%= link_to "Agregar", new_offer_path %> |
+          <% if user_signed_in? %>
+            <%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete) %>
+          <% else %>
+            <%= link_to "Registro", new_user_registration_path %> |
+            <%= link_to "Iniciar sesión", new_user_session_path %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="footer-width footer-bottom">
+      <p>&copy; precajobs 2011. Diseño por <a href="http://www.spyka.net">spyka</a></p>
+    </div>
 </div>
 
 </body>

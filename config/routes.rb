@@ -1,12 +1,20 @@
 Precajobs::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, 
+    :path_names => { 
+      :sign_in => 'login', 
+      :sign_out => 'logout',
+      :sign_up => 'signup' 
+    },
+    :controllers => { :registrations => "devise/registrations" }
 
   resources :offers do 
-    post 'voting', :on => :member
     post 'comment', :on => :member
+    post 'vote', :on => :member
   end
 
-  root :to => "offers#index"
+  root :to => 'offers#index'
+
+  match 'validator/url' => 'validator#url'
 
 end

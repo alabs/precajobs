@@ -1,0 +1,24 @@
+<div id="content">
+  <h2>Reenviar instrucciones de confirmación</h2>
+  
+  <%= form_for(resource, :as => resource_name, :url => user_confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+    <%= devise_error_messages! %>
+  
+    <div class="clearfix">
+      <%= f.label :email, "Correo electrónico" %>
+      <div class="input">
+        <%= f.email_field :email, :autofocus => "autofocus" %>
+      </div>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "Reenviar instrucciones de confirmación", :class => "btn primary" %>
+    </div>
+  <% end %>
+</div>
+  
+<div class="sidebar">
+  <ul>
+    <li><%= render :partial => "devise/shared/links" %></li>
+  </ul>
+</div>
