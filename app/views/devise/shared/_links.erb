@@ -11,11 +11,11 @@
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "¿No has recivido las instrucciones de confirmación?", new_confirmation_path(resource_name) %><br />
+  <%= link_to "¿No has recibido las instrucciones de confirmación?", new_user_confirmation_path(resource_name) %><br />
 <% end -%>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to "¿No has recivido las instrucción de desbloqueo?", new_unlock_path(resource_name) %><br />
+  <%= link_to "¿No has recibido las instrucción de desbloqueo?", new_unlock_path(resource_name) %><br />
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>
