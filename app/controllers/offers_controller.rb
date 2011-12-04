@@ -1,5 +1,7 @@
 class OffersController < ApplicationController
 
+  before_filter :authenticate_user!, :except => [:index, :show]
+
   # GET /offers
   def index
     @offers = Offer.all
