@@ -64,3 +64,25 @@
   background-color: #151515;
   background-image: -moz-linear-gradient(center top , #424242, #1C1C1C);
 }
+
+.action-sidebar {
+  padding: 17px 20px 18px 50px;
+}
+
+.mt1 {
+  margin-top: 1em !important;
+}
+
+.grey {
+  background-color: #F2F2F2;
+  margin:1em;
+}
+
+.white {
+  background-color: #FFF;
+  margin:1em;
+}
+
+blockquote p{
+  font-style: normal;
+}

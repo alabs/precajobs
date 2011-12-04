@@ -16,8 +16,14 @@
 
 </div>
 
-<%= render :partial => "comments/list", :locals => { :resource => @offer } %>
+<div id="content" class="mt1">
+  <%= render :partial => "comments/list", :locals => { :resource => @offer } %>
+</div>
 
-<%= render :partial => "comments/form" %>
+<div class="sidebar mt1">
+  <ul>
+    <li><%= render :partial => "comments/form" %></li>
+  </ul>
+</div>
 
 

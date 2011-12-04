@@ -1,10 +1,15 @@
 <h2>Comentarios</h2>
 <% if resource.comments %>
-  <ul>
+  <ul class="unstyled">
   <% resource.comments.each do |comment| %>
-    <li>
+    <li class="<%= cycle "grey", "white" %>">
+      <span class="right"><%= comment.user.created_at %></span>
       <b><%= comment.user.username %></b> dijo:
-      <%= comment.body %>
+      <p>
+        <blockquote>
+          <p><%= comment.body %></p>
+        </blockquote>
+      </p>
     </li>
   <% end %>
   </ul>
