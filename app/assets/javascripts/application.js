@@ -61,7 +61,7 @@ $(function() {
   // message when saving offer
   $('input[value="Crear oferta"]').click( function(){ 
     $(this).attr('disabled', 'disabled');
-    $('.actions').append('<div class="right"><img src="/assets/spinner.gif" style="margin-right:1em">Procesando imagen e información</div>');
+    $('#loading').show('slow');
   });
 
   // check the input link domain
