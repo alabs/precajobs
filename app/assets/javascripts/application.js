@@ -34,6 +34,18 @@ function check_link_domain(el){
   } else {
     $('.clearfix.hidden').hide('slow')
   }
+
+  // focusout check the URL 
+  $.get('/validator/url', {'to_verify': link}, function(data){
+    if (data.status) { 
+      $('#ko').hide('slow');
+      $('#ok').show('slow');
+    } else {
+      $('#ok').hide('slow');
+      $('#ko').show('slow');
+    }
+  });
+
 }
 
 $(function() {
@@ -50,8 +62,10 @@ $(function() {
     $('.actions').append('<div class="right"><img src="/assets/spinner.gif" style="margin-right:1em">Procesando imagen e información</div>');
   });
 
+  $('input#offer_link').focus();
+
   // check the input link domain
-  $('input#offer_link').keyup( function() {
+  $('input#offer_link').focusout( function() {
     check_link_domain($(this));
   });
 

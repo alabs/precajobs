@@ -19,6 +19,10 @@
       <%= f.label :link, "Direccion (URL)" %>
       <div class="input">
         <%= f.text_field :link, :class => "span7" %>
+        <span class="add-on">
+          <%= image_tag "ok.gif", :id => "ok", :style => "vertical-align:middle;", :class => "hidden" %>
+          <%= image_tag "ko.gif", :id => "ko", :style => "vertical-align:middle;", :class => "hidden" %>
+        </span>
       </div>
     </div>
   
