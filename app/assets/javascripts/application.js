@@ -26,6 +26,16 @@ function voting(el){
   });
 }
 
+function check_link_domain(el){
+  // show all fields when the domain is unknown
+  var link = el.val();
+  if (link.search('infojobs') == -1){
+    $('.clearfix.hidden').show('slow')
+  } else {
+    $('.clearfix.hidden').hide('slow')
+  }
+}
+
 $(function() {
 
   // voting
@@ -38,6 +48,11 @@ $(function() {
   $('input[value="Crear oferta"]').click( function(){ 
     $(this).attr('disabled', 'disabled');
     $('.actions').append('<div class="right"><img src="/assets/spinner.gif" style="margin-right:1em">Procesando imagen e información</div>');
+  });
+
+  // check the input link domain
+  $('input#offer_link').keyup( function() {
+    check_link_domain($(this));
   });
 
 }); // function
