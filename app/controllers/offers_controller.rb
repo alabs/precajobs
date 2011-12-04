@@ -83,14 +83,15 @@ class OffersController < ApplicationController
   end
 
   # POST /offers/1/voting
-  def voting 
+  def vote
     offer = Offer.find(params[:id])
-    user = current_user
-    if params[:direction] == 'up'
-      current_user.vote_exclusively_for(offer)
-    elsif params[:direction] == 'down'
-      current_user.vote_exclusively_against(offer)
-    end
+    current_user = User.first
+    current_user.vote_exclusively_for(offer)
+    #if params[:direction] == 'up'
+    #  current_user.vote_exclusively_for(offer)
+    #elsif params[:direction] == 'down'
+    #  current_user.vote_exclusively_against(offer)
+    #end
     votes = offer.votes_for - offer.votes_against
 
     respond_to do |format|

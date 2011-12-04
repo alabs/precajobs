@@ -17,8 +17,8 @@
     <% @offers.each do |offer| %>
       <tr>
         <td>
-          <%= link_to (image_tag "upvote.png"), '#', :class => "vote", :id => "up-offer-"+ offer.id.to_s %> <br />
-          <%= link_to (image_tag "downvote.png"), '#', :class => "vote", :id => "down-offer-"+ offer.id.to_s %><br />
+          <%= link_to (image_tag "upvote.png"), '#', :class => "vote", "data-direction" => "up", "data-offer" => offer.id.to_s  %> <br />
+          <%= link_to (image_tag "downvote.png"), '#', :class => "vote", "data-direction" => "down", "data-offer" => offer.id.to_s  %><br />
    	<div id="votes-count"><%= offer.votes_for - offer.votes_against %>
           </div>
         </td>

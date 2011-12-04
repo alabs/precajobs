@@ -3,29 +3,35 @@
 //= require jquery
 //= require jquery_ujs
 
+function voting(el){
+  var url = "/offers/" + el.data('offer') + "/vote";
+  var params = { "direction": el.data('direction') };
+  console.log(params);
+
+/*
+  $.post(url, params, function(data) {
+    alert(data);
+  }); // post
+*/
+
+  $.ajax({
+    type: "POST",
+    async: true,
+    url: url,
+    data: params,
+    dataType: "json",
+    contentType: "application/json",
+    success: function (msg) { alert('success') },
+    error: function (err) { alert('error') }
+  });
+}
 
 $(function() {
+
+  // voting
   $('.vote').click( function(event) {
     event.preventDefault();
-    var raw = $(this).attr('id').split('-');
-    var direction = raw[0];
-    var offer_id = raw[2];
-    var url = "/offers/" + offer_id + "/voting";
-    var csrf_token = $("meta[name='csrf-token']").attr('content');
-    var params = { "direction": "up" };
-    $.ajax({
-      type: "POST",
-      async: true,
-      url: '/offers/1/voting',
-      data: params,
-      dataType: "json",
-      contentType: "application/json; charset=utf-8",
-      success: function (msg) { alert('success') },
-      error: function (err) { alert('error'), alert(err.responseText)}
-    });
+    voting($(this));
+  });
 
-//    $.post(url, params, function(data) {
-//      alert(data);
-//    }); // post
-  }); // click
 }); // function
