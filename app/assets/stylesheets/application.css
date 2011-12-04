@@ -48,3 +48,8 @@
   text-align: center;
   margin: 0.5em;
 }
+
+.btn.primary {
+  background-color: #151515;
+  background-image: -moz-linear-gradient(center top , #424242, #1C1C1C);
+}

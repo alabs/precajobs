@@ -3,8 +3,6 @@ version 0.1
 ===========
 
 * Voting AJAX doesn't work
-* Offer show style
-* Black buttons (for primary btn bootstrap)
 * Comments
 * JS to show all the form for another kind of websites (no infojobs)
 * nokogiri for monster and infolancer
