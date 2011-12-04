@@ -2,12 +2,15 @@
 
 <div id="content" class="full">
 
- <h1><%= link_to @offer.title, @offer.link %></h1>
+ <h1 class="title"><%= link_to @offer.title, @offer.link %></h1>
 
- <%= link_to(image_tag(@offer.screenshot.url(:thumb), :class => "left"), @offer.screenshot.url, :class => "left screenshot" ) %>
- <div class="right"><%= @offer.summary %></div>
+ <div class="left">
+   <%= link_to(image_tag(@offer.screenshot.url(:thumb)), @offer.screenshot.url, :class => "screenshot" ) %>
+ </div>
+ <%= @offer.summary %>
   
   <p class="left">
+  <hr />
     <%= @offer.description %>
   </p>
 

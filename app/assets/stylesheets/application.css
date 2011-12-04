@@ -43,3 +43,8 @@
 .screenshot {
   margin: 2em;
 }
+
+.title {
+  text-align: center;
+  margin: 0.5em;
+}
