@@ -16,26 +16,8 @@
 
 </div>
 
-<h2>Comentarios</h2>
-<% if @offer.comments %>
-  <ul>
-  <% @offer.comments.each do |comment| %>
-    <li>
-      <b><%= comment.user.email %></b> dijo:
-      <%= comment.body %>
-    </li>
-  <% end %>
-  </ul>
-<% else %>
-  Sin comentarios
-<% end %>
+<%= render :partial => "comments/list", :locals => { :resource => @offer } %>
 
-<h2> Comentar </h2>
-<%= form_for :comment, :url => comment_offer_path do |f|  %>
-  <%= f.text_area :body, :rows => "10", :class => "span15" %>
-  <div class="actions">
-    <%= f.submit "Crear comentario", :class => "btn primary" %>
-  </div>
-<% end %>
+<%= render :partial => "comments/form" %>
 
 

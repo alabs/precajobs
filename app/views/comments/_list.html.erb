@@ -1,0 +1,13 @@
+<h2>Comentarios</h2>
+<% if resource.comments %>
+  <ul>
+  <% resource.comments.each do |comment| %>
+    <li>
+      <b><%= comment.user.username %></b> dijo:
+      <%= comment.body %>
+    </li>
+  <% end %>
+  </ul>
+<% else %>
+  Sin comentarios
+<% end %>

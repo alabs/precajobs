@@ -1,0 +1,7 @@
+<h2> Comentar </h2>
+<%= form_for :comment, :url => comment_offer_path do |f|  %>
+  <%= f.text_area :body, :rows => "10", :class => "span15" %>
+  <div class="actions">
+    <%= f.submit "Crear comentario", :class => "btn primary" %>
+  </div>
+<% end %>
