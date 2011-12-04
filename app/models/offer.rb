@@ -14,6 +14,7 @@ class Offer < ActiveRecord::Base
   before_create do |offer| 
 
     require 'process_offer'
+    require 'iconv'
     require 'screenchot'
 
     # process information
@@ -24,7 +25,8 @@ class Offer < ActiveRecord::Base
     end
 
     # process the screenshot
-    filename = "/tmp/" + result["title"].gsub(/\s+/, "") + ".png"
+    title = Iconv.new('ascii//translit', 'utf-8').iconv(result["title"])
+    filename = "/tmp/" + title.gsub(/\s+/, "") + ".png"
     screenchot(link, filename)
     offer.screenshot = File.new(filename)
 
