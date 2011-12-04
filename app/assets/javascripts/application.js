@@ -40,9 +40,11 @@ function check_link_domain(el){
     if (data.status) { 
       $('#ko').hide('slow');
       $('#ok').show('slow');
+      $('input[value="Crear oferta"]').removeAttr('disabled');
     } else {
       $('#ok').hide('slow');
       $('#ko').show('slow');
+      $('input[value="Crear oferta"]').attr('disabled', 'disabled');
     }
   });
 
@@ -62,11 +64,9 @@ $(function() {
     $('.actions').append('<div class="right"><img src="/assets/spinner.gif" style="margin-right:1em">Procesando imagen e información</div>');
   });
 
-  $('input#offer_link').focus();
-
   // check the input link domain
   $('input#offer_link').focusout( function() {
     check_link_domain($(this));
   });
 
-}); // function
+});

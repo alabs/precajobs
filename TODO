@@ -6,7 +6,6 @@ version 0.1
 * Comments
 * nokogiri for monster and infolancer
 * Registration: email validation
-* Registration: ask for a nickname to show in comments and offers
 * cancan for creating an offer, commenting and voting
 * Alerts pretty styles
 * Worst offers (order by voting)
