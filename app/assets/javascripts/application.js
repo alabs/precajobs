@@ -4,25 +4,14 @@
 //= require jquery_ujs
 
 function voting(el){
-  var url = "/offers/" + el.data('offer') + "/vote";
+  // vote for an offer and show result
+  var offer_id = el.data('offer');
+  var url = "/offers/" + offer_id + "/vote";
   var params = { "direction": el.data('direction') };
-  console.log(params);
-
-/*
   $.post(url, params, function(data) {
-    alert(data);
-  }); // post
-*/
-
-  $.ajax({
-    type: "POST",
-    async: true,
-    url: url,
-    data: params,
-    dataType: "json",
-    contentType: "application/json",
-    success: function (msg) { alert('success') },
-    error: function (err) { alert('error') }
+    if (data.result == "OK"){
+      $('.votes-count[data-offer="' + offer_id + '"]').html(data.votes)
+    }
   });
 }
 

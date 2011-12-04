@@ -73,18 +73,15 @@ class OffersController < ApplicationController
   # POST /offers/1/voting
   def vote
     offer = Offer.find(params[:id])
-    current_user = User.first
-    current_user.vote_exclusively_for(offer)
-    #if params[:direction] == 'up'
-    #  current_user.vote_exclusively_for(offer)
-    #elsif params[:direction] == 'down'
-    #  current_user.vote_exclusively_against(offer)
-    #end
-    votes = offer.votes_for - offer.votes_against
 
-    respond_to do |format|
-      format.json { render :json => "{'result' => 'OK', 'votes': #{votes}}" }
+    if params[:direction] == 'up'
+      current_user.vote_exclusively_for(offer)
+    elsif params[:direction] == 'down'
+      current_user.vote_exclusively_against(offer)
     end
+
+    votes = offer.votes_for - offer.votes_against
+    render :json => {'result' => 'OK', 'votes' => votes }
   end
 
 end

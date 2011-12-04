@@ -19,7 +19,7 @@
         <td>
           <%= link_to (image_tag "upvote.png"), '#', :class => "vote", "data-direction" => "up", "data-offer" => offer.id.to_s  %> <br />
           <%= link_to (image_tag "downvote.png"), '#', :class => "vote", "data-direction" => "down", "data-offer" => offer.id.to_s  %><br />
-   	<div id="votes-count"><%= offer.votes_for - offer.votes_against %>
+   	<div class="votes-count" data-offer="<%= offer.id.to_s %>"><%= offer.votes_for - offer.votes_against %>
           </div>
         </td>
         <td><%= link_to offer.title, offer.link %></td>

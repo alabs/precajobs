@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'unicorn'
 gem 'capistrano'
 gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'json'
 
 # plugins
 gem 'paperclip'
