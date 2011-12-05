@@ -2,6 +2,7 @@
 // This file is automatically included by javascript_include_tag :defaults
 //= require jquery
 //= require jquery_ujs
+//= require jquery.jgrowl
 
 function voting(el){
   // vote for an offer and show result
@@ -58,4 +59,21 @@ $(function() {
     check_link_domain($(this));
   });
 
+  $(".flash-messages").each(function() {
+    var msg = $(this).children("p");
+    var theme = $(this).children("p").attr("class");
+    $.jGrowl(msg.text(), { 
+      sticky: true, 
+      theme: "flash-" + theme,
+      open: function() { 
+        $(this).click( 
+          function(){ 
+            $(this).fadeOut();
+          } 
+        )
+      }
+    });
+  });
+
 });
+

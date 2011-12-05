@@ -4,6 +4,7 @@
   <title>precajobs | encuentra tu trabajo precario</title>
   <%= stylesheet_link_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" %>
   <%= stylesheet_link_tag "inception" %>
+  <%= stylesheet_link_tag "jquery.jgrowl" %>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap-dropdown.js" %>
@@ -31,6 +32,11 @@
       </ul>
     </ul>
   </div>
+    <% flash.each do |name, msg| %>
+      <div class="flash-messages">
+        <%= content_tag :p, msg, :class => "#{name}" %>
+      </div>
+    <% end %>
   <div id="body">
     <%= yield %>
     <div class="clear"></div>
