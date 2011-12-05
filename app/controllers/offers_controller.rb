@@ -40,7 +40,7 @@ class OffersController < ApplicationController
 
     respond_to do |format|
       if @offer.save
-        format.html { redirect_to(@offer, :notice => 'Offer was successfully created.') }
+        format.html { redirect_to(@offer, :notice => 'La oferta se ha creado correctamente.') }
       else
         format.html { render :action => "new" }
       end
@@ -53,7 +53,7 @@ class OffersController < ApplicationController
 
     respond_to do |format|
       if @offer.update_attributes(params[:offer])
-        format.html { redirect_to(@offer, :notice => 'Offer was successfully updated.') }
+        format.html { redirect_to(@offer, :notice => 'La oferta se ha actualizado correctamente.') }
       else
         format.html { render :action => "edit" }
       end
@@ -90,7 +90,7 @@ class OffersController < ApplicationController
     logger.info @offer
     logger.info params
     Comment.create(:user_id => current_user.id, :offer_id => @offer.id, :body => params[:comment][:body])
-    redirect_to(@offer, :notice => 'Comment was successfully created.')
+    redirect_to(@offer, :notice => 'El comentario se ha creado correctamente.')
   end
 
 end
