@@ -19,6 +19,19 @@
   <p class="left">
   <hr />
     <%= @offer.description %>
+    <%= (@offer.studies != "") ? "<p><b>Estudios</b>: " + @offer.studies + "</p>" : "" %>        
+
+<%#
+        'studies' => get_by_id(html, "prefijoEstMin"),
+        'experience' => get_by_id(html, "prefijoExpMin"),
+        'requisites_min' => get_by_id(html, "prefijoReqMinimos"),
+        'requisites_des' => get_by_id(html, "prefijoReqDeseados"),
+        'contract_type' => get_by_id(html, "prefijoContrato"),
+        'contract_duration' => get_by_id(html, "prefijoDuracion"),
+        'contract_hour' => get_by_id(html, "prefijoHorario"),
+        'salary' => get_by_id(html, "prefijoSalario")
+      }
+%>
   </p>
 
 </div>

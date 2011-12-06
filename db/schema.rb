@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111204111800) do
+ActiveRecord::Schema.define(:version => 20111206105132) do
 
   create_table "comments", :force => true do |t|
     t.integer  "offer_id"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(:version => 20111204111800) do
     t.integer  "screenshot_file_size"
     t.datetime "screenshot_updated_at"
     t.text     "summary"
+    t.string   "studies"
+    t.string   "experience"
+    t.string   "requisites_min"
+    t.string   "requisites_des"
+    t.string   "contract_type"
+    t.string   "contract_duration"
+    t.string   "contract_hour"
+    t.string   "salary"
   end
 
   create_table "users", :force => true do |t|

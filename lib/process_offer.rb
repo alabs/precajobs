@@ -1,14 +1,27 @@
 require 'open-uri'
 require 'nokogiri'
 
+def get_by_id(html, id)
+  html.xpath('//td[@id="' + id + '"]').text.strip
+end
+
 def process_offer(site, url)
   case site
     when "infojobs"
       url = URI.parse(URI.encode(url.strip))
       html = Nokogiri::HTML(open(url).read)
-      title = html.xpath('//h1').text.strip
-      description = html.xpath('//td[@id="prefijoDescripcion1"]').text
-      result = { 'title' => title, 'description' => description }
+      result = { 
+        'title' => html.xpath('//h1').text.strip, 
+        'description' => get_by_id(html, "prefijoDescripcion1"), 
+        'studies' => get_by_id(html, "prefijoEstMin"),
+        'experience' => get_by_id(html, "prefijoExpMin"),
+        'requisites_min' => get_by_id(html, "prefijoReqMinimos"),
+        'requisites_des' => get_by_id(html, "prefijoReqDeseados"),
+        'contract_type' => get_by_id(html, "prefijoContrato"),
+        'contract_duration' => get_by_id(html, "prefijoDuracion"),
+        'contract_hour' => get_by_id(html, "prefijoHorario"),
+        'salary' => get_by_id(html, "prefijoSalario")
+      }
     else 
       result = false
   end 
