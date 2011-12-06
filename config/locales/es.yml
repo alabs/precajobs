@@ -1,0 +1,15 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  activerecord:
+    errors:
+      models:
+        offer: 
+          attributes:
+            link:
+              taken: "Ya se encuentra una oferta con esa dirección"
+        user:
+          attributes:
+            confirmation_token:
+              invalid: "El código de confirmación es incorrecto"

@@ -56,11 +56,3 @@ es:
         subject: 'Instrucciones de recuperación de contraseña'
       unlock_instructions:
         subject: 'Instrucciones para desbloquear'
-
-  activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            confirmation_token:
-              invalid: 'El código de confirmación es incorrecto'
