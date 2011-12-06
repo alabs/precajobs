@@ -11,6 +11,8 @@
   
   <%= render :partial => "list", :locals => { :offers => @offers } %> 
 
-  <%= link_to 'Oferta nueva', new_offer_path, :class => "btn success" %>
+  <span class="center">
+    <%= link_to '¡Agrega una oferta!', new_offer_path, :class => "btn primary" %>
+  </span>
 
 </div>
