@@ -99,6 +99,26 @@ blockquote p{
   margin: 0 auto;
 }
 
+#front-slogan{
+  text-align:center; 
+}
+
+#front-slogan #slogan{
+  font-size: 2em;
+}
+
+.list-title{
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.list-comments{
+  margin: 0.5em auto;
+  font-weight: bold;
+}
+
 /* alerts flash or whatever */
 .flash-messages{
   display: none;
@@ -118,3 +138,5 @@ div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer {
   background-color: #f40919 !important;
   font-weight: bold;
 }
+
+

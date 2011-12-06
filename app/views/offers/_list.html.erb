@@ -1,0 +1,11 @@
+<% offers.each do |offer| %>
+  <div class="left span1">
+    <%= link_to (image_tag "upvote.png"), '#', :class => "vote", "data-direction" => "up", "data-offer" => offer.id.to_s  %> <br />
+    <span class="votes-count" data-offer="<%= offer.id.to_s %>"><%= offer.votes_for - offer.votes_against %></span> <br />
+    <%= link_to (image_tag "downvote.png"), '#', :class => "vote", "data-direction" => "down", "data-offer" => offer.id.to_s  %><br />
+  </div>
+  <%= link_to offer.title, offer, :class => "list-title" %>
+  <%= offer.summary %>
+  <span class="right list-comments"><%= offer.comments.count %> comentarios</span>
+  <hr />
+<% end %>
