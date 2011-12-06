@@ -19,19 +19,17 @@
   <p class="left">
   <hr />
     <%= @offer.description %>
-    <%= (@offer.studies != "") ? "<p><b>Estudios</b>: " + @offer.studies + "</p>" : "" %>        
-
-<%#
-        'studies' => get_by_id(html, "prefijoEstMin"),
-        'experience' => get_by_id(html, "prefijoExpMin"),
-        'requisites_min' => get_by_id(html, "prefijoReqMinimos"),
-        'requisites_des' => get_by_id(html, "prefijoReqDeseados"),
-        'contract_type' => get_by_id(html, "prefijoContrato"),
-        'contract_duration' => get_by_id(html, "prefijoDuracion"),
-        'contract_hour' => get_by_id(html, "prefijoHorario"),
-        'salary' => get_by_id(html, "prefijoSalario")
-      }
-%>
+  <hr />
+    <ul>
+      <%= raw (@offer.studies != "") ? "<li><b>Estudios</b>: " + @offer.studies + "</li>" : "" %>        
+      <%= raw (@offer.experience != "") ? "<li><b>Experiencia</b>: " + @offer.experience + "</li>" : "" %>        
+      <%= raw (@offer.requisites_min != "") ? "<li><b>Requisitos mínimos</b>: " + @offer.requisites_des + "</li>" : "" %>        
+      <%= raw (@offer.requisites_des != "") ? "<li><b>Requisitos deseados</b>: " + @offer.requisites_des + "</li>" : "" %>        
+      <%= raw (@offer.contract_type != "") ? "<li><b>Tipo de contrato</b>: " + @offer.contract_type + "</li>" : "" %>        
+      <%= raw (@offer.contract_duration != "") ? "<li><b>Duración del contrato</b>: " + @offer.contract_duration + "</li>" : "" %>        
+      <%= raw (@offer.contract_hour != "") ? "<li><b>Horario</b>: " + @offer.contract_hour + "</li>" : "" %>        
+      <%= raw (@offer.salary != "") ? "<li><b>Salario</b>: " + @offer.salary + "</li>" : "" %>        
+    </ul>
   </p>
 
 </div>

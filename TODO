@@ -2,13 +2,8 @@
 version 0.1 
 ===========
 
-* Voting AJAX doesn't work
-* Comments
-* nokogiri for all fields on infojobs
-* Alerts pretty styles
 * Worst offers (order by voting)
 * Last offers (order by date)
-* List offers style
 * Tests
 
 version 0.2

@@ -7,7 +7,7 @@ class Offer < ActiveRecord::Base
 
   has_many :comments
 
-  validates :link, :title, :description, :summary, :screenshot_file_name, :presence => true
+#  validates :link, :title, :description, :summary, :screenshot_file_name, :presence => true
 
   validates :link, :uniqueness => true
 
