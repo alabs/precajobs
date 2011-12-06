@@ -72,8 +72,6 @@ class OffersController < ApplicationController
   # POST /offers/1/comment
   def comment
     @offer = Offer.find(params[:id])
-    logger.info @offer
-    logger.info params
     Comment.create(:user_id => current_user.id, :offer_id => @offer.id, :body => params[:comment][:body])
     flash[:notice] = 'El comentario se ha creado correctamente.'
     redirect_to @offer

@@ -27,15 +27,24 @@ function check_link_domain(el){
 
   // focusout check the URL 
   $.get('/validator/url', {'to_verify': link}, function(data){
-    if (data.status) { 
-      $('#ko').hide('slow');
-      $('#ok').show('slow');
-      $('input[value="Crear oferta"]').removeAttr('disabled');
-    } else {
-      $('#ok').hide('slow');
-      $('#ko').show('slow');
-      $('input[value="Crear oferta"]').attr('disabled', 'disabled');
-    }
+    switch (data.status) { 
+      case "OK": 
+        $('#ko').hide('slow');
+        $('#ok').show('slow');
+        $('input[value="Crear oferta"]').removeAttr('disabled');
+        break;
+      case "haveit": 
+        $('#ok').hide('slow');
+        $('#ko').show('slow');
+        $('input[value="Crear oferta"]').attr('disabled', 'disabled');
+        $('#haveit').show('slow');
+        break;
+      default:
+        $('#ok').hide('slow');
+        $('#ko').show('slow');
+        $('input[value="Crear oferta"]').attr('disabled', 'disabled');
+        break;
+    }
   });
 
 }
@@ -50,8 +59,11 @@ $(function() {
 
   // message when saving offer
   $('input[value="Crear oferta"]').click( function(){ 
-    $(this).attr('disabled', 'disabled');
-    $('#loading').show('slow');
+    // if not summary, don't do nothing
+    if (!$("#offer_summary").val() == ""){
+      $(this).attr('disabled', 'disabled');
+      $('#loading').show('slow');
+    }
   });
 
   // check the input link domain

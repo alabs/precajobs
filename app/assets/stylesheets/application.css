@@ -120,6 +120,12 @@ blockquote p{
   font-weight: bold;
 }
 
+#haveit{
+  color: white;
+  font-weight: bold;
+  background-color: #8A0808;
+}
+
 /* alerts flash or whatever */
 .flash-messages{
   display: none;

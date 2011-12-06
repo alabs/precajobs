@@ -29,7 +29,7 @@
     <div class="clearfix">
       <%= f.label :summary, "Resumen" %>
       <div class="input">
-        <%= f.text_area :summary, :rows => "10", :class => "span7" %>
+        <%= f.text_area :summary, :rows => "10", :class => "span7", :required => "required" %>
       </div>
     </div>
 
@@ -119,6 +119,10 @@
       Procesando información y pantallazo
       <%= image_tag "spinner-big.gif", :class => "center spinner" %>
       <i>Estamos trabajando en ellou</i>
+    </li>
+    <li id="haveit" class="hidden">
+      <p>Ya tenemos esa oferta :(</p>
+      <p>Prueba con otra</p>
     </li>
   </ul>
 </div>
