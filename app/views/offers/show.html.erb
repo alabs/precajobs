@@ -1,6 +1,15 @@
 <div id="content" class="full">
 
+ <div class="left">
+   <%= link_to (image_tag "upvote.png"), '#', :class => "vote", "data-direction" => "up", "data-offer" => @offer.id.to_s  %> <br />
+   <span class="votes-count" data-offer="<%= @offer.id.to_s %>"><%= @offer.votes_for - @offer.votes_against %></span> <br />
+   <%= link_to (image_tag "downvote.png"), '#', :class => "vote", "data-direction" => "down", "data-offer" => @offer.id.to_s  %><br />
+ </div>
+
  <h1 class="title"><%= link_to @offer.title, @offer.link %></h1>
+
+ <%= link_to "Ver pantallazo", @offer.screenshot.url, :class => "label success" %>
+ <%= link_to "Ver oferta original", @offer.link, :class => "label notice" %>
 
  <div class="left">
    <%= link_to(image_tag(@offer.screenshot.url(:thumb)), @offer.screenshot.url, :class => "screenshot" ) %>

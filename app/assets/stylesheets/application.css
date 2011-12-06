@@ -92,6 +92,13 @@ blockquote p{
   font-style: normal;
 }
 
+.votes-count {
+  font-weight: bold;
+  font-size: 1.3em;
+  text-align: center;
+  margin: 0 auto;
+}
+
 /* alerts flash or whatever */
 .flash-messages{
   display: none;
