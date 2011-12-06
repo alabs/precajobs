@@ -1,3 +1,8 @@
+/* asset pipeline
+*= require inception
+*= require jquery.jgrowl
+*/
+
 .hidden {
   display:none;
 }
@@ -106,4 +111,3 @@ div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer {
   background-color: #f40919 !important;
   font-weight: bold;
 }
-
