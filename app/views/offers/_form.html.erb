@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="clearfix hidden">
+    <div class="clearfix tohide">
       <%= f.label :title, "Título" %>
       <div class="input">
         <%= f.text_field :title, :class => "span7" %>
@@ -41,12 +41,69 @@
     </div>
 
   
-    <div class="clearfix hidden">
+    <div class="clearfix tohide">
       <%= f.label :description, "Descripción" %>
       <div class="input">
-        <%= f.text_area :description, :rows => "20", :class => "span7" %>
+        <%= f.text_area :description, :rows => "10", :class => "span7" %>
       </div>
     </div>
+
+    <div class="clearfix tohide">
+      <%= f.label :title, "Estudios" %>
+      <div class="input">
+        <%= f.text_field :studies, :class => "span7" %>
+      </div>
+    </div>
+
+    <div class="clearfix tohide">
+      <%= f.label :title, "Experiencia" %>
+      <div class="input">
+        <%= f.text_field :experience, :class => "span7" %>
+      </div>
+    </div>
+
+    <div class="clearfix tohide">
+      <%= f.label :description, "Requisitos mínimos" %>
+      <div class="input">
+        <%= f.text_area :requisites_min, :rows => "10", :class => "span7" %>
+      </div>
+    </div>
+
+    <div class="clearfix tohide">
+      <%= f.label :description, "Requisitos deseados" %>
+      <div class="input">
+        <%= f.text_area :requisites_des, :rows => "10", :class => "span7" %>
+      </div>
+    </div>
+
+    <div class="clearfix tohide">
+      <%= f.label :title, "Tipo de contrato" %>
+      <div class="input">
+        <%= f.text_field :contract_type, :class => "span7" %>
+      </div>
+    </div>
+
+    <div class="clearfix tohide">
+      <%= f.label :title, "Duración del contrato" %>
+      <div class="input">
+        <%= f.text_field :contract_duration, :class => "span7" %>
+      </div>
+    </div>
+
+    <div class="clearfix tohide">
+      <%= f.label :title, "Horario" %>
+      <div class="input">
+        <%= f.text_field :contract_hour, :class => "span7" %>
+      </div>
+    </div>
+
+    <div class="clearfix tohide">
+      <%= f.label :title, "Salario" %>
+      <div class="input">
+        <%= f.text_field :salary, :class => "span7" %>
+      </div>
+    </div>
+
   
     <div class="actions">
       <%= f.submit "Crear oferta", :class => "btn primary" %>
