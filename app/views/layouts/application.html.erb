@@ -18,7 +18,8 @@
   </div>
   <div id="nav">
     <ul>
-      <li><%= link_to "Ofertas", offers_path %></li>
+      <li><%= link_to "Peores", offers_path %></li>
+      <li><%= link_to "Últimas", last_offers_path %></li>
       <li><%= link_to "Agregar", new_offer_path %></li>
       <ul class="right">
         <% if user_signed_in? %>

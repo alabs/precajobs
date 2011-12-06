@@ -7,6 +7,11 @@ class OffersController < ApplicationController
     @offers = Offer.all
   end
 
+  # GET /offers/last
+  def last
+    @offers = Offer.all(:order => "created_at desc")
+  end
+
   # GET /offers/1
   def show
     @offer = Offer.find(params[:id])

@@ -7,28 +7,28 @@
     <div class="clearfix">
       <%= f.label :username, "Usuario" %>
       <div class="input">
-        <%= f.text_field :username, :autofocus => "autofocus" %>
+        <%= f.text_field :username, :autofocus => "autofocus", :required => "required" %>
       </div>
     </div>
   
     <div class="clearfix">
       <%= f.label :email, "Correo electrónico" %>
       <div class="input">
-        <%= f.email_field :email %>
+        <%= f.email_field :email, :required => "required" %>
       </div>
     </div>
   
     <div class="clearfix">
       <%= f.label :password, "Contraseña" %>
       <div class="input">
-        <%= f.password_field :password %>
+        <%= f.password_field :password, :required => "required" %>
       </div>
     </div>
   
     <div class="clearfix">
       <%= f.label :password_confirmation, "Confirmación de contraseña" %>
       <div class="input">
-        <%= f.password_field :password_confirmation %>
+        <%= f.password_field :password_confirmation, :required => "required" %>
       </div>
     </div>
   

@@ -6,14 +6,14 @@
     <div class="clearfix">
       <%= f.label :login, "Usuario o correo electrónico" %>
       <div class="input">
-        <%= f.text_field :login, :autofocus => "autofocus" %>
+        <%= f.text_field :login, :autofocus => "autofocus", :required => "required" %>
       </div>
     </div>
   
     <div class="clearfix">
       <%= f.label :password, "Contraseña" %>
       <div class="input">
-        <%= f.password_field :password %>
+        <%= f.password_field :password, :required => "required" %>
       </div>
     </div>
   

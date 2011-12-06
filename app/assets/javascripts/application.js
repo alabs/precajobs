@@ -30,6 +30,7 @@ function check_link_domain(el){
     switch (data.status) { 
       case "OK": 
         $('#ko').hide('slow');
+        $('#haveit').hide('slow');
         $('#ok').show('slow');
         $('input[value="Crear oferta"]').removeAttr('disabled');
         break;
@@ -77,11 +78,8 @@ $(function() {
     $.jGrowl(msg.text(), { 
       sticky: true, 
       theme: "flash-" + theme,
-      open: function() { 
-        $(this).click( 
-          function(){ 
-            $(this).fadeOut();
-          } 
+      // close on click
+      open: function() { $(this).click( function(){ $(this).fadeOut(); } 
         )
       }
     });

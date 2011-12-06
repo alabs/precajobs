@@ -3,7 +3,6 @@ version 0.1
 ===========
 
 * Worst offers (order by voting)
-* Last offers (order by date)
 * Tests
 
 version 0.2
