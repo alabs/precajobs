@@ -20,9 +20,9 @@ function check_link_domain(el){
   // show all fields when the domain is unknown
   var link = el.val();
   if (link.search('infojobs') == -1){
-    $('.clearfix.hidden').show('slow')
+    $('.clearfix.tohide').show('slow')
   } else {
-    $('.clearfix.hidden').hide('slow')
+    $('.clearfix.tohide').hide('slow')
   }
 
   // focusout check the URL 
