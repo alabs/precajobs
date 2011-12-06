@@ -1,7 +1,7 @@
 <h2> Agregar un comentario </h2>
 <% if user_signed_in? %>
   <%= form_for :comment, :url => comment_offer_path do |f|  %>
-    <%= f.text_area :body, :rows => "10", :class => "span4" %>
+    <%= f.text_area :body, :rows => "10", :class => classes %>
     <div class="actions action-sidebar">
       <%= f.submit "Agregar comentario", :class => "btn primary" %>
     </div>
