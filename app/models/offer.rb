@@ -45,7 +45,7 @@ class Offer < ActiveRecord::Base
 
     logger.debug "Processing link screenshot ..."
     # process the screenshot
-    title = Iconv.new('ascii//translit', 'utf-8').iconv(result["title"])
+    title = Iconv.new('ascii//translit', 'utf-8').iconv(offer.title)
     filename = "/tmp/" + title.gsub(/\s+/, "") + ".png"
     screenchot(link, filename)
     offer.screenshot = File.new(filename)
