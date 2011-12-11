@@ -4,7 +4,7 @@ class OffersController < ApplicationController
 
   # GET /offers
   def index
-    @offers = Offer.all
+    @offers = Offer.plusminus_tally ({:ascending => true, :at_most => 5})
   end
 
   # GET /offers/last
