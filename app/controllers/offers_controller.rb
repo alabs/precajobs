@@ -1,10 +1,13 @@
 class OffersController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:index, :show]
+  require 'will_paginate/array'
+
+  before_filter :authenticate_user!, :except => [:index, :show, :last]
 
   # GET /offers
   def index
-    @offers = Offer.plusminus_tally ({:ascending => true, :at_most => 5})
+    offers = Offer.plusminus_tally ({:ascending => true, :at_most => 5})
+    @offers = offers.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /offers/last

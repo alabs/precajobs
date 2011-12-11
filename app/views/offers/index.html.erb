@@ -11,6 +11,8 @@
   
   <%= render :partial => "list", :locals => { :offers => @offers } %> 
 
+  <%= will_paginate @offers, :renderer => BootstrapPaginationHelper::LinkRenderer %>
+
   <span class="center">
     <%= link_to '¡Agrega una oferta!', new_offer_path, :class => "btn primary" %>
   </span>

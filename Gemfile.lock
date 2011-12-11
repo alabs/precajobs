@@ -142,6 +142,7 @@ GEM
       raindrops (~> 0.6)
     warden (1.1.0)
       rack (>= 1.0)
+    will_paginate (3.0.2)
 
 PLATFORMS
   ruby
@@ -161,3 +162,4 @@ DEPENDENCIES
   thumbs_up
   uglifier
   unicorn
+  will_paginate

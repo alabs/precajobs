@@ -147,3 +147,8 @@ div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer {
 }
 
 
+.pagination a:hover, .pagination .active a {
+  background-color: grey;
+}
+
+
