@@ -1,3 +1,4 @@
+# encoding: utf-8
 class OffersController < ApplicationController
 
   require 'will_paginate/array'
@@ -7,12 +8,16 @@ class OffersController < ApplicationController
   # GET /offers
   def index
     offers = Offer.plusminus_tally ({:ascending => true, :at_most => 5})
-    @offers = offers.paginate(:page => params[:page], :per_page => 10)
+    @offers = offers.paginate(:page => params[:page])
+    @title = "Peores ofertas"
   end
 
   # GET /offers/last
   def last
-    @offers = Offer.all(:order => "created_at desc")
+    offers = Offer.all(:order => "created_at desc")
+    @offers = offers.paginate(:page => params[:page])
+    @title = "Últimas ofertas"
+    render 'index'
   end
 
   # GET /offers/1
