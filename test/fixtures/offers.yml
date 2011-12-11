@@ -1,11 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  link: MyString
+  link: "http://infojobs.net/blabla"
   title: MyString
-  description: MyText
+  summary: MyText
+  studies: MyString
 
 two:
   link: MyString
   title: MyString
-  description: MyText
+  summary: MyText
+  studies: MyString
