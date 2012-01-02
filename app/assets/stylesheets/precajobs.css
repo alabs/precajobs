@@ -14,7 +14,7 @@ body {
 }
 
 #main-nav {
-    height: 1.9em;
+    height: 2.1em;
     background: url("http://media.infojobs.net/portales/ij/app/sprites/sprite-xbackgrounds.png") repeat-x scroll 0 -250px transparent;
 }
 
@@ -26,11 +26,19 @@ body {
     border-right: 1px solid #D66817;
   float:left;
   padding-right: 20px;
-    line-height: 2.3em;
     color: #FBE5D4;
     font-weight: bold;
     text-decoration: none;
-    font-size:0.8em;
+}
+
+#main-nav a{
+    line-height: 2.3em;
+  font-size: 0.9em;
+   color: #fff;
+}
+
+#logo {
+    margin: 1em;
 }
 
 #login li{
@@ -68,9 +76,9 @@ body {
 }
 
 #header-logo {
-    background: url("http://media.infojobs.net/app/sprites/sprite-header-footer.png") no-repeat scroll 0 0 #E1E1E3;
-    height: 4.2em;
-    margin-top: 2em;
+    background: url("/assets/header-background.png") #E1E1E3;
+    height: 4.8em;
+    margin-top: 2.5em;
 }
 
 #header-vacancies{

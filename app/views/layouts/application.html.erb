@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>precajobs | encuentra tu trabajo precario</title>
+  <link rel="shortcut icon" href="/assets/favicon.png" type="image/png">
   <%= stylesheet_link_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" %>
   <%= stylesheet_link_tag "precajobs" %>
   <%= javascript_include_tag "application" %>
@@ -32,7 +33,7 @@
           </div> <!-- CONTENT -->
         </div> <!-- HEADER-TOP -->
         <div id="header-logo">
-          <img alt="#" src="http://media.infojobs.net/portales/ij//app/pictures/pic-logo-empleo-print.png" />
+          <%= link_to image_tag("logo.png", :width => 150, :id => "logo", :alt => "PrecaJobs"), root_path %>
           <div id="header-vacancies">
             <strong class="vacancies">81.449</strong>
             <em>puestos precarios</em>
