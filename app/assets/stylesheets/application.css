@@ -1,5 +1,5 @@
 /* asset pipeline
-*= require inception
+*= require precajobs
 *= require jquery.jgrowl
 */
 
@@ -22,6 +22,47 @@
   text-align: center;
 }
 
+#content {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFFFFF;
+    border-color: #CCCCCC #C0C0C0 #C0C0C0 #CCCCCC;
+    border-style: solid;
+    border-width: 1px;
+    float: left;
+    margin: 0;
+    padding: 10px;
+    width: 615px;
+}
+
+.sidebar {
+    float: right;
+    padding: 0;
+    width: 280px;
+}
+
+.sidebar ul li {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFFFFF;
+    border-color: #CCCCCC #C0C0C0 #C0C0C0 #CCCCCC;
+    border-style: solid;
+    border-width: 1px;
+    line-height: 1.9em;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+a {
+    color: #D1700E;
+}
+
 .spinner {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -29,32 +70,6 @@
 
 .full {
   width: 98% !important ;
-}
-
-#header #logo{
-  color: #000000;
-  font-family: Arial,Helvetica,sans-serif;
-  font-size: 35px;
-}
-
-#header #logo a{
-  color: #FFFFFF;
-  float: left;
-  font-size: 50px;
-  font-weight: normal;
-  letter-spacing: -3px;
-  text-decoration: none;
-}
-
-#header #slogan {
-  color: #FFE0CC;
-  float: left;
-  font-family: Georgia,"Times New Roman",Times,serif;
-  font-size: 13px;
-  letter-spacing: 0;
-  margin-left: 12px;
-  margin-top: 24px;
-  padding-left: 4px; 
 }
 
 .screenshot {
@@ -100,14 +115,6 @@ blockquote p{
   margin: 0 auto;
 }
 
-#front-slogan{
-  text-align:center; 
-}
-
-#front-slogan #slogan{
-  font-size: 2em;
-}
-
 .list-title{
   display: block;
   text-align: center;
@@ -150,5 +157,7 @@ div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer {
 .pagination a:hover, .pagination .active a {
   background-color: grey;
 }
+
+/* end flashes */
 
 
