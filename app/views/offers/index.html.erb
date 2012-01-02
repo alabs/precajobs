@@ -7,11 +7,15 @@
 
   <hr />
 
-  <h1><%= @title %></h1>
+  <h2 class="title"><%= @title %></h2>
   
   <%= render :partial => "list", :locals => { :offers => @offers } %> 
 
   <%= will_paginate @offers, :renderer => BootstrapPaginationHelper::LinkRenderer %>
+
+  <div id="column">
+    <%= image_tag "http://placehold.it/160x600", :style => "display:inline;" %>
+  </div>
 
   <span class="center">
     <%= link_to '¡Agrega una oferta!', new_offer_path, :class => "btn primary" %>

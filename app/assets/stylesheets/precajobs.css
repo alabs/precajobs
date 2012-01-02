@@ -1,0 +1,208 @@
+body {
+    background-color: #E1E1E3;
+    color: #231F20;
+    font-family: Helvetica,Arial,sans-serif;
+    line-height: 1.8em;
+    padding-bottom: 2em;
+}
+
+
+#wrapper {
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    width: 90%;
+}
+
+#main-nav {
+    height: 1.9em;
+    background: url("http://media.infojobs.net/portales/ij/app/sprites/sprite-xbackgrounds.png") repeat-x scroll 0 -250px transparent;
+}
+
+#offers li{
+    color: #FBE5D4;
+    display: block;
+    padding: 0 0 0 1em;
+    text-decoration: none;
+    border-right: 1px solid #D66817;
+  float:left;
+  padding-right: 20px;
+    line-height: 2.3em;
+    color: #FBE5D4;
+    font-weight: bold;
+    text-decoration: none;
+    font-size:0.8em;
+}
+
+#login li{
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+#header-top {
+    background: url("http://media.infojobs.net/app/backgrounds/bg-bar-20.png") repeat-x scroll 0 0 transparent;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#header-top .content{
+    height: 32px;
+    margin: 0 auto;
+    padding: 0 8px;
+    width: 970px;
+    z-index: 0;
+}
+
+#header-top .socialmedia {
+    float:right;
+    margin-top: 0.3em;
+}
+
+#header-top .socialmedia li {
+  display: inline;
+  list-style-type: none;
+    float:right;
+}
+
+#header-logo {
+    background: url("http://media.infojobs.net/app/sprites/sprite-header-footer.png") no-repeat scroll 0 0 #E1E1E3;
+    height: 4.2em;
+    margin-top: 2em;
+}
+
+#header-vacancies{
+    position: absolute;
+    right: 222px;
+    top: 51px;
+    width: 310px;
+}
+
+#header-vacancies strong {
+    color: #6E6E6E;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+#header-vacancies em {
+    color: #7F8084;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding-right: 3px;
+    text-transform: uppercase;
+}
+
+
+#slogan{
+    color: #33335D;
+    font-size: 1.8em;
+    font-weight: bold;
+    padding-top: 1.5em;
+    text-align: center;
+}
+
+#slogan-wrapper{
+    background-color: #EBEBEB;
+}
+
+.title{
+    color: #35335D;
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 115%;
+    margin-bottom: 1em;
+}
+
+.left{
+  float:left;
+}
+
+.right{
+  float:right;
+}
+
+.addoffer{
+    margin: 0 auto;
+    text-align:center;
+}
+
+.listado tr.highlight, .latest-published li.highlight {
+    background-color: #FFFFDF;
+}
+.listado th {
+    border-bottom: 2px solid #8CC6EC;
+    color: #F77518;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 0.8em;
+    text-align: left;
+}
+.listado th a:link, .listado th a:hover, .listado th a:visited {
+    color: #F77518;
+    font-weight: bold;
+}
+.listado td {
+    border-bottom: 0.1em solid #E3E5F2;
+}
+.listado td a:link {
+    color: #0058A5;
+    text-decoration: none;
+}
+.listado td a:hover {
+    color: #0058A5;
+    text-decoration: underline;
+}
+.listado td a:visited {
+    color: #777DB5;
+    text-decoration: none;
+}
+.listado td a.LinklistadoNormal:link, .listado td a.LinklistadoNormal:hover, .listado td a.LinklistadoNormal:visited {
+    text-decoration: underline;
+}
+.listado span, .listado .cell-text {
+    color: #353535 !important;
+    font-family: Arial;
+    font-size: 1.1em;
+}
+.listado .cell-text a {
+    font-size: 1em;
+}
+.listado strong {
+    font-size: 1.1em;
+}
+.listado.top-offers {
+    margin-bottom: 2.5em;
+}
+.listado {
+    border-collapse: collapse;
+    padding: 0;
+    font-size: 0.8em;
+    margin-right: 3em;
+    float: left;
+}
+.listado tr {
+    height: 26px;
+    vertical-align: top;
+}
+.listado tbody tr:hover, .listado-extendido tbody tr:hover {
+    background-color: #F5F6FA;
+}
+.listado td {
+    border-bottom: 0.1em solid #E3E5F2;
+    padding-bottom: 0.5em;
+    padding-left: 0.8em;
+    padding-top: 0.5em;
+}
+.listado th.poblation {
+    width: 21%;
+}
+.listado th.company {
+    width: 25%;
+}
+.listado th.urgent {
+    width: 1%;
+}

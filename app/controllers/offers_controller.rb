@@ -3,7 +3,7 @@ class OffersController < ApplicationController
 
   require 'will_paginate/array'
 
-  before_filter :authenticate_user!, :except => [:index, :show, :last]
+  before_filter :authenticate_user!, :except => [:index, :show, :last, :vote]
 
   # GET /offers
   def index
@@ -71,6 +71,11 @@ class OffersController < ApplicationController
   # POST /offers/1/voting
   def vote
     offer = Offer.find(params[:id])
+
+    if current_user.blank?
+      render :json => {'result' => 'anon' }
+      return
+    end
 
     if params[:direction] == 'up'
       current_user.vote_exclusively_for(offer)

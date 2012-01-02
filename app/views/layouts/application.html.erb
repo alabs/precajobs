@@ -3,65 +3,66 @@
 <head>
   <title>precajobs | encuentra tu trabajo precario</title>
   <%= stylesheet_link_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" %>
-  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "precajobs" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap-dropdown.js" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
-<div id="container">
-  <div id="header">
-    <span id="logo"><a href="/">precajobs</a></span>
-    <span id="slogan">encuentra tu trabajo precario</span>
-    <div class="clear"></div>
-  </div>
-  <div id="nav">
-    <ul>
-      <li><%= link_to "Peores", offers_path %></li>
-      <li><%= link_to "Últimas", last_offers_path %></li>
-      <li><%= link_to "Agregar", new_offer_path %></li>
-      <ul class="right">
-        <% if user_signed_in? %>
-          <li><%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete) %></li>
-        <% else %>
-          <li><%= link_to "Registro", new_user_registration_path %></li>
-          <li><%= link_to "Iniciar sesión", new_user_session_path %></a></li>
+    <div id="wrapper">
+      <header>
+        <div id="header-top">
+          <div class="content">
+            <div class="socialmedia">
+              <ul>
+                <li>
+                  <iframe scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/follow_button.1324331373.html#_=1325431379516&amp;_version=2&amp;enableNewSizing=false&amp;id=twitter-widget-0&amp;lang=es&amp;screen_name=PrecaJobs&amp;show_count=false&amp;size=m" class="twitter-follow-button" style="width: 150px; height: 20px;" title="Twitter Follow Button"></iframe>
+                </li>
+                <li class="gplusone">
+                  <div id="___plusone_0" style="height: 20px; width: 90px; display: inline-block; text-indent: 0pt; margin: 0pt; padding: 0pt; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline;"><iframe width="100%" scrolling="no" frameborder="0" title="+1" vspace="0" tabindex="-1" style="position: static; left: 0pt; top: 0pt; width: 90px; margin: 0px; border-style: none; height: 20px; visibility: visible;" src="https://plusone.google.com/_/+1/fastbutton?url=http%3A%2F%2Fwww.infojobs.net%2F&amp;size=medium&amp;count=true&amp;annotation=&amp;hl=es-ES&amp;jsh=m%3B%2F_%2Fapps-static%2F_%2Fjs%2Fwidget%2F__features__%2Frt%3Dj%2Fver%3DQj89meq-rmQ.es.%2Fsv%3D1%2Fam%3D!itqi7GDL5S6I4GqN1g%2Fd%3D1%2F#id=I1_1325431364802&amp;parent=http%3A%2F%2Fwww.infojobs.net&amp;rpctoken=807414976&amp;_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe" name="I1_1325431364802" marginwidth="0" marginheight="0" id="I1_1325431364802" hspace="0" allowtransparency="true"></iframe></div>
+                </li>
+                <li>
+                  <div id="fb-button">
+                    <fb:like show_faces="false" width="125" layout="button_count" send="false" href="http://es-es.facebook.com/InfoJobs" class=" fb_edge_widget_with_comment fb_iframe_widget"><span><iframe scrolling="no" id="f32ebd5bf2b7446" name="f1bdffbdf10b9be" style="border: medium none; overflow: hidden; height: 20px; width: 125px;" title="Like this content on Facebook." class="fb_ltr" src="https://www.facebook.com/plugins/like.php?channel_url=https%3A%2F%2Fs-static.ak.fbcdn.net%2Fconnect%2Fxd_proxy.php%3Fversion%3D3%23cb%3Df3847bf762461de%26origin%3Dhttp%253A%252F%252Fwww.infojobs.net%252Ff316e5198cb4a9e%26relation%3Dparent.parent%26transport%3Dpostmessage&amp;extended_social_context=false&amp;href=http%3A%2F%2Fes-es.facebook.com%2FInfoJobs&amp;layout=button_count&amp;locale=es_ES&amp;node_type=link&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=125"></iframe></span></fb:like>
+                  </div>    
+                </li>
+              </ul>
+            </div> <!-- SOCIAL MEDIA -->
+          </div> <!-- CONTENT -->
+        </div> <!-- HEADER-TOP -->
+        <div id="header-logo">
+          <img alt="#" src="http://media.infojobs.net/portales/ij//app/pictures/pic-logo-empleo-print.png" />
+          <div id="header-vacancies">
+            <strong class="vacancies">81.449</strong>
+            <em>puestos precarios</em>
+          </div>
+        </div>
+        <div id="main-nav">
+          <ul id="offers" class="left">
+            <li><%= link_to "Peores", offers_path %></li>
+            <li><%= link_to "Últimas", last_offers_path %></li>
+            <li><%= link_to "Agregar", new_offer_path %></li>
+          </ul>
+          <ul id="login" class="right">
+            <% if user_signed_in? %>
+              <li><%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete) %></li>
+            <% else %>
+              <li><%= link_to "Registro", new_user_registration_path %></li>
+              <li><%= link_to "Iniciar sesión", new_user_session_path %></a></li>
+            <% end %>
+          </ul>
+        </div>
+      </header>
+      <div id="content">
+        <% flash.each do |name, msg| %>
+          <div class="flash-messages">
+            <%= content_tag :p, msg, :class => "#{name}" %>
+          </div>
         <% end %>
-      </ul>
-    </ul>
-  </div>
-    <% flash.each do |name, msg| %>
-      <div class="flash-messages">
-        <%= content_tag :p, msg, :class => "#{name}" %>
-      </div>
-    <% end %>
-  <div id="body">
-    <%= yield %>
-    <div class="clear"></div>
-  </div>
-</div>
 
-<div id="footer">
-  <div class="footer-content">
-    <div class="footer-width">
-      <span class="sitename">precajobs</span>
-        <p class="footer-links">
-          <%= link_to "Ofertas", offers_path %> |
-          <%= link_to "Agregar", new_offer_path %> |
-          <% if user_signed_in? %>
-            <%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete) %>
-          <% else %>
-            <%= link_to "Registro", new_user_registration_path %> |
-            <%= link_to "Iniciar sesión", new_user_session_path %>
-          <% end %>
-        </p>
+        <%= yield %>
       </div>
     </div>
-    <div class="footer-width footer-bottom">
-      <p>&copy; precajobs 2011. Diseño por <a href="http://www.spyka.net">spyka</a></p>
-    </div>
-</div>
-
 </body>
 </html>

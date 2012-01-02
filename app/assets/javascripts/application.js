@@ -4,6 +4,15 @@
 //= require jquery_ujs
 //= require jquery.jgrowl
 
+function notify(message, theme){
+  $.jGrowl(message, { 
+    sticky: true, 
+    theme: "flash-" + theme,
+    // close on click
+    open: function() { $(this).click( function(){ $(this).fadeOut(); } ) }
+  });
+};
+
 function voting(el){
   // vote for an offer and show result
   var offer_id = el.data('offer');
@@ -12,6 +21,8 @@ function voting(el){
   $.post(url, params, function(data) {
     if (data.result == "OK"){
       $('.votes-count[data-offer="' + offer_id + '"]').html(data.votes)
+    } else if (data.result == "anon"){
+      notify('No tienes un usuario, así que no puedes votar :(', 'error')
     }
   });
 }
@@ -75,14 +86,7 @@ $(function() {
   $(".flash-messages").each(function() {
     var msg = $(this).children("p");
     var theme = $(this).children("p").attr("class");
-    $.jGrowl(msg.text(), { 
-      sticky: true, 
-      theme: "flash-" + theme,
-      // close on click
-      open: function() { $(this).click( function(){ $(this).fadeOut(); } 
-        )
-      }
-    });
+    notify(msg.text(), theme);
   });
 
 });
