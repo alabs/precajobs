@@ -5,6 +5,7 @@
     <%= link_to '¡Agrega una oferta!', new_offer_path, :class => "btn primary" %>
   </div>
 
+<%= link_to "¡Oferta precaria!", "javascript: window.open('http://192.168.0.194:8080/offers/new?offer_link=' + window.location.href ,'_blank');" %>
   <hr />
 
   <h2 class="title"><%= @title %></h2>

@@ -18,7 +18,11 @@
     <div class="clearfix">
       <%= f.label :link, "Direccion (URL)" %>
       <div class="input">
-        <%= f.text_field :link, :class => "span7", :autofocus => "autofocus" %>
+        <% if params[:offer_link] %>
+          <%= f.text_field :link, :class => "span7", :autofocus => "autofocus", :value => params[:offer_link] %>
+        <% else %>
+          <%= f.text_field :link, :class => "span7", :autofocus => "autofocus" %>
+        <% end %>
         <span class="add-on">
           <%= image_tag "ok.gif", :id => "ok", :style => "vertical-align:middle;", :class => "hidden" %>
           <%= image_tag "ko.gif", :id => "ko", :style => "vertical-align:middle;", :class => "hidden" %>
