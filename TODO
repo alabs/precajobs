@@ -10,3 +10,5 @@ version 0.2
 * omniauth
 * gravatar
 * FB/twitter/G+ shares
+* captcha for anonymous
+
