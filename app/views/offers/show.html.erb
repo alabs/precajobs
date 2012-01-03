@@ -8,28 +8,22 @@
 
  <h1 class="title"><%= link_to @offer.title, @offer.link %></h1>
 
- <%= link_to "Ver pantallazo", @offer.screenshot.url, :class => "label success" %>
- <%= link_to "Ver oferta original", @offer.link, :class => "label notice" %>
+  <div class="right">
+    <%= link_to "Ver pantallazo", @offer.screenshot.url, :class => "label success" %>
+    <%= link_to "Ver oferta original", @offer.link, :class => "label notice" %>
+  </div>
 
- <div class="left">
-   <%= link_to(image_tag(@offer.screenshot.url(:thumb)), @offer.screenshot.url, :class => "screenshot" ) %>
- </div>
-  
-  <p class="left">
-  <hr />
-    <%= @offer.description %>
-  <hr />
-    <ul>
-      <%= raw (@offer.studies.blank?) ? "" : "<li><b>Estudios</b>: " + @offer.studies + "</li>" %>        
-      <%= raw (@offer.experience.blank?) ? "" : "<li><b>Experiencia</b>: " + @offer.experience + "</li>" %>        
-      <%= raw (@offer.requisites_min.blank?) ? "" : "<li><b>Requisitos mínimos</b>: " + @offer.requisites_des + "</li>" %>        
-      <%= raw (@offer.requisites_des.blank?) ? "" : "<li><b>Requisitos deseados</b>: " + @offer.requisites_des + "</li>" %>        
-      <%= raw (@offer.contract_type.blank?) ? "" : "<li><b>Tipo de contrato</b>: " + @offer.contract_type + "</li>" %>        
-      <%= raw (@offer.contract_duration.blank?) ? "" : "<li><b>Duración del contrato</b>: " + @offer.contract_duration + "</li>" %>        
-      <%= raw (@offer.contract_hour.blank?) ? "" : "<li><b>Horario</b>: " + @offer.contract_hour + "</li>" %>        
-      <%= raw (@offer.salary.blank?) ? "" : "<li><b>Salario</b>: " + @offer.salary + "</li>" %>        
-    </ul>
-  </p>
+  <table class="datostabulados">
+    <%= render :partial => "field", :locals => {:field => @offer.description, :description => "Descripción"} %>
+    <%= render :partial => "field", :locals => {:field => @offer.studies, :description => "Estudios"} %>
+    <%= render :partial => "field", :locals => {:field => @offer.experience, :description => "Experiencia"} %>
+    <%= render :partial => "field", :locals => {:field => @offer.requisites_min, :description => "Requisitos mínimos"} %>
+    <%= render :partial => "field", :locals => {:field => @offer.requisites_des, :description => "Requisitos deseados"} %>
+    <%= render :partial => "field", :locals => {:field => @offer.contract_type, :description => "Tipo de contrato"} %>
+    <%= render :partial => "field", :locals => {:field => @offer.contract_duration, :description => "Duración de contrato"} %>
+    <%= render :partial => "field", :locals => {:field => @offer.contract_hour, :description => "Horario"} %>
+    <%= render :partial => "field", :locals => {:field => @offer.salary, :description => "Salario"} %>
+  </table>
 
 </div>
 
