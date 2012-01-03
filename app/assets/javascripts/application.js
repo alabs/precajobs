@@ -20,9 +20,11 @@ function voting(el){
   var params = { "direction": el.data('direction') };
   $.post(url, params, function(data) {
     if (data.result == "OK"){
-      $('.votes-count[data-offer="' + offer_id + '"]').html(data.votes)
+      $('.votes-count[data-offer="' + offer_id + '"]').html(data.votes);
+      // TODO: quitar el link
+      el.children('img').attr('src', '/assets/downvoted.png');
     } else if (data.result == "anon"){
-      notify('No tienes un usuario, así que no puedes votar :(', 'error')
+      notify('No tienes un usuario, así que no puedes votar :(', 'error');
     }
   });
 }

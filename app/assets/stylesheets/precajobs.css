@@ -179,6 +179,8 @@ ul {
     color: #353535 !important;
     font-family: Arial;
     font-size: 1.1em;
+    vertical-align: top;
+   margin-left: 0.5em;
 }
 .listado .cell-text a {
     font-size: 1em;

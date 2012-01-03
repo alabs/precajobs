@@ -10,7 +10,12 @@
     <% offers.each do |offer| %>
       <tr>
         <td>
-          <%= link_to (image_tag "downvote.png"), '#', :class => "vote", "data-direction" => "down", "data-offer" => offer.id.to_s  %><br />
+          <% if offer.voted_by? current_user %> 
+            <%= image_tag "downvoted.png" %>
+          <% else %>
+            <%= link_to (image_tag "downvote.png"), '#', :class => "vote", "data-direction" => "down", "data-offer" => offer.id.to_s  %>
+          <% end %>
+          <span class="votes-count" data-offer="<%= offer.id.to_s %>"><%= offer.plusminus %></span>
         </td>
         <td class="vacant">
           <div class="cell-text">
