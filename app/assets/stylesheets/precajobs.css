@@ -6,6 +6,10 @@ body {
     padding-bottom: 2em;
 }
 
+ul {
+    list-style-type:none;
+}
+
 
 #wrapper {
     background-color: #FFFFFF;
@@ -214,3 +218,4 @@ body {
 .listado th.urgent {
     width: 1%;
 }
+
