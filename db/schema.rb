@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120102170459) do
+ActiveRecord::Schema.define(:version => 20120103075556) do
 
   create_table "comments", :force => true do |t|
     t.integer  "offer_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20120102170459) do
     t.string   "contract_duration"
     t.string   "contract_hour"
     t.string   "salary"
+    t.string   "province"
   end
 
   create_table "users", :force => true do |t|

@@ -5,6 +5,10 @@ def get_by_id(html, id)
   html.xpath('//td[@id="' + id + '"]').text.strip
 end
 
+def get_a_by_id(html, id)
+  html.xpath('//a[@id="' + id + '"]').text.strip
+end
+
 def process_offer(site, url)
   case site
     when "infojobs"
@@ -13,6 +17,7 @@ def process_offer(site, url)
       result = { 
         'title' => html.xpath('//h1').text.strip, 
         'description' => get_by_id(html, "prefijoDescripcion1"), 
+        'province' => get_a_by_id(html, "prefijoProvincia"), 
         'studies' => get_by_id(html, "prefijoEstMin"),
         'experience' => get_by_id(html, "prefijoExpMin"),
         'requisites_min' => get_by_id(html, "prefijoReqMinimos"),

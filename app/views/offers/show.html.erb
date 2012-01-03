@@ -15,6 +15,7 @@
 
   <table class="datostabulados">
     <%= render :partial => "field", :locals => {:field => @offer.description, :description => "Descripción"} %>
+    <%= render :partial => "field", :locals => {:field => @offer.province, :description => "Provincia"} %>
     <%= render :partial => "field", :locals => {:field => @offer.studies, :description => "Estudios"} %>
     <%= render :partial => "field", :locals => {:field => @offer.experience, :description => "Experiencia"} %>
     <%= render :partial => "field", :locals => {:field => @offer.requisites_min, :description => "Requisitos mínimos"} %>

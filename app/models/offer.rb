@@ -1,7 +1,7 @@
 class Offer < ActiveRecord::Base
 
   validates :link, :uniqueness => true
-  validates :link, :summary, :presence => true
+  validates :link, :presence => true
 
   acts_as_voteable
 
@@ -34,6 +34,7 @@ class Offer < ActiveRecord::Base
       offer.title = result["title"]
       offer.description = result["description"]
       offer.studies = result["studies"]
+      offer.province = result["province"]
       offer.experience = result["experience"]
       offer.requisites_min = result["requisites_min"]
       offer.requisites_des = result["requisites_des"]
@@ -45,7 +46,7 @@ class Offer < ActiveRecord::Base
 
     logger.debug "Processing link screenshot ..."
     # process the screenshot
-    title = Iconv.new('ascii//translit', 'utf-8').iconv(offer.title)
+    title = Time.now.to_i.to_s
     filename = "/tmp/" + title.gsub(/\s+/, "") + ".png"
     screenchot(link, filename)
     offer.screenshot = File.new(filename)
