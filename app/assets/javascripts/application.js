@@ -76,8 +76,9 @@ $(function() {
   });
 
   // check the input link domain
-  $('input#offer_link').focusout( function() {
-    check_link_domain($(this));
+  $('#check_link').click( function(e) {
+    e.preventDefault();
+    check_link_domain($('#offer_link'));
   });
 
   $(".flash-messages").each(function() {
