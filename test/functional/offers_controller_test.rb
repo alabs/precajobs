@@ -56,7 +56,7 @@ class OffersControllerTest < ActionController::TestCase
   test "should create offer as user" do
     sign_in @user
     assert_difference('Offer.count') do
-      post :create, :offer => Offer.new({:title => "blabla", :link => "http://google.es", :summary => "bla bla"})
+      post :create, :offer => Offer.new({:title => "blabla", :link => "http://google.es"})
     end
     print Offer.last
     assert_redirected_to offer_path(assigns(:offer))
@@ -66,7 +66,7 @@ class OffersControllerTest < ActionController::TestCase
     sign_in @user
     link = 'https://www.infojobs.net/madrid/informacion-dirigida-comerciales-editorial/of-i3cf262b387430e9907bbdc07d6ad1a'
     assert_difference('Offer.count') do
-      post :create, :offer => Offer.new({:title => "Preca", :link => link, :summary => "bla bla"})
+      post :create, :offer => Offer.new({:title => "Preca", :link => link})
     end
     offer = Offer.last
     assert (offer.studies == 'Sin estudios')

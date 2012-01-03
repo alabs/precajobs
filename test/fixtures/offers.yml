@@ -3,11 +3,9 @@
 one:
   link: "http://infojobs.net/blabla"
   title: MyString
-  summary: MyText
   studies: MyString
 
 two:
   link: MyString
   title: MyString
-  summary: MyText
   studies: MyString

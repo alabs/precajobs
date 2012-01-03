@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111206105132) do
+ActiveRecord::Schema.define(:version => 20120102170459) do
 
   create_table "comments", :force => true do |t|
     t.integer  "offer_id"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(:version => 20111206105132) do
     t.string   "screenshot_content_type"
     t.integer  "screenshot_file_size"
     t.datetime "screenshot_updated_at"
-    t.text     "summary"
     t.string   "studies"
     t.string   "experience"
     t.string   "requisites_min"

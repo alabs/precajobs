@@ -29,14 +29,13 @@
         </span>
       </div>
     </div>
-  
+
     <div class="clearfix">
-      <%= f.label :summary, "Resumen" %>
       <div class="input">
-        <%= f.text_area :summary, :rows => "10", :class => "span7", :required => "required" %>
+        <%= link_to "Comprobar", "#", :id => "check_link", :class => "btn primary" %>
       </div>
     </div>
-
+  
     <div class="clearfix tohide">
       <%= f.label :title, "Título" %>
       <div class="input">
@@ -44,7 +43,6 @@
       </div>
     </div>
 
-  
     <div class="clearfix tohide">
       <%= f.label :description, "Descripción" %>
       <div class="input">

@@ -71,11 +71,8 @@ $(function() {
 
   // message when saving offer
   $('input[value="Crear oferta"]').click( function(){ 
-    // if not summary, don't do nothing
-    if (!$("#offer_summary").val() == ""){
-      $(this).attr('disabled', 'disabled');
-      $('#loading').show('slow');
-    }
+    $(this).attr('disabled', 'disabled');
+    $('#loading').show('slow');
   });
 
   // check the input link domain
