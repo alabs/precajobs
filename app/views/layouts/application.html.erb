@@ -35,7 +35,7 @@
         <div id="header-logo">
           <%= link_to image_tag("logo.png", :width => 150, :id => "logo", :alt => "PrecaJobs"), root_path %>
           <div id="header-vacancies">
-            <strong class="vacancies">81.449</strong>
+            <strong class="vacancies"><%= Offer.count %></strong>
             <em>puestos precarios</em>
           </div>
         </div>
