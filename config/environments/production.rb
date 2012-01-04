@@ -66,4 +66,17 @@ Precajobs::Application.configure do
    
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
+
+  # Configuración para ActionMailer
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => false
+  }
+
+  # Para notificar excepciones
+  config.middleware.use ExceptionNotifier,
+    :email_prefix => "[precajobs exception] ",
+    :sender_address => %{"notifier" <debug@alabs.es>},
+    :exception_recipients => %w{debug@alabs.es}
+
+
 end

@@ -11,6 +11,7 @@ gem 'unicorn'
 gem 'capistrano'
 gem 'ruby-debug19', :require => 'ruby-debug'
 gem 'json'
+gem 'exception_notification'
 
 # plugins
 gem 'paperclip'
