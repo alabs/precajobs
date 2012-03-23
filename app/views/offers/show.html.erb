@@ -28,20 +28,11 @@
 
 </div>
 
-<% if @offer.comments.exists? %>
-  <div id="content" class="mt1">
+<div id="content" class="mt1 full">
+  <% if @offer.comments.exists? %>
     <%= render :partial => "comments/list", :locals => { :resource => @offer } %>
-  </div>
-  <div class="sidebar mt1">
-    <ul>
-      <li><%= render :partial => "comments/form", :locals => { :classes => "span4" } %></li>
-    </ul>
-  </div>
-<% else %>
-  <div id="content" class="full mt1">
-    <ul class="unstyled">
-      <li><%= render :partial => "comments/form", :locals => { :classes => "span14" } %></li>
-    </ul>
-  </div>
-<% end %>
-
+  <% end %>
+  <ul>
+    <li><%= render :partial => "comments/form", :locals => { :classes => "span4" } %></li>
+  </ul>
+</div>

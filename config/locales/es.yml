@@ -13,3 +13,6 @@ es:
           attributes:
             confirmation_token:
               invalid: "El código de confirmación es incorrecto"
+  recaptcha:
+    errors:
+      incorrect-captcha-sol: "Ha habido un error en el captcha"

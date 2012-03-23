@@ -3,3 +3,6 @@
 
 en:
   hello: "Hello world"
+  recaptcha:
+    errors:
+      incorrect-captcha-sol: 'Fail'

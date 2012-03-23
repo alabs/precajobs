@@ -3,8 +3,12 @@
   <ul class="unstyled">
   <% resource.comments.each do |comment| %>
     <li class="<%= cycle "grey", "white" %>">
-      <span class="right"><%= comment.user.created_at %></span>
-      <b><%= comment.user.username %></b> dijo:
+      <span class="right"><%= comment.created_at %></span>
+      <% if user_signed_in? %>
+        <b><%= comment.user.username %></b> dijo:
+      <% else %>
+        <b>anon</b> dijo:
+      <% end %>
       <p>
         <blockquote>
           <p><%= comment.body %></p>

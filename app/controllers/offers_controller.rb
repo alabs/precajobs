@@ -3,7 +3,7 @@ class OffersController < ApplicationController
 
   require 'will_paginate/array'
 
-  before_filter :authenticate_user!, :except => [:index, :show, :last, :vote]
+  #before_filter :authenticate_user!, :except => [:index, :show, :last, :vote]
 
   # GET /offers
   def index
@@ -90,9 +90,17 @@ class OffersController < ApplicationController
   # POST /offers/1/comment
   def comment
     @offer = Offer.find(params[:id])
-    Comment.create(:user_id => current_user.id, :offer_id => @offer.id, :body => params[:comment][:body])
-    flash[:notice] = 'El comentario se ha creado correctamente.'
-    redirect_to @offer
+    if user_signed_in?
+      @comment = Comment.new(:user_id => current_user.id, :offer_id => @offer.id, :body => params[:comment][:body])
+    else
+      @comment = Comment.new(:offer_id => @offer.id, :body => params[:comment][:body])
+    end
+    if verify_recaptcha(:model => @comment, :message => "El captcha está incorrecto", :timeout => 10) and @comment.save
+      flash[:notice] = 'El comentario se ha creado correctamente.'
+      redirect_to @offer
+    else
+      redirect_to @offer
+    end
   end
 
 end

@@ -1,11 +1,10 @@
 <h2> Agregar un comentario </h2>
-<% if user_signed_in? %>
   <%= form_for :comment, :url => comment_offer_path do |f|  %>
     <%= f.text_area :body, :rows => "10", :class => classes %>
+    <% unless user_signed_in? %>
+      <%= recaptcha_tags %>
+    <% end %>
     <div class="actions action-sidebar">
       <%= f.submit "Agregar comentario", :class => "btn primary" %>
     </div>
   <% end %>
-<% else %>
-  <p>Debes haber iniciado sesión para poner un comentario. Nos gustaría que todo el mundo pueda participar sin necesidad de esto, pero mientras en el mundo existan spammers la tenemos jodida.</p>
-<% end %>
