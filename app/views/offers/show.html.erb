@@ -9,7 +9,9 @@
  <h1 class="title"><%= link_to @offer.title, @offer.link %></h1>
 
   <div class="right">
-    <%= link_to "Ver pantallazo", @offer.screenshot.url, :class => "label success" %>
+    <% if @offer.screenshot? %>
+      <%= link_to "Ver pantallazo", @offer.screenshot.url, :class => "label success" %>
+    <% end %>
     <%= link_to "Ver oferta original", @offer.link, :class => "label notice" %>
   </div>
 

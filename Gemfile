@@ -20,3 +20,4 @@ gem 'nokogiri'
 gem 'thumbs_up'
 gem 'will_paginate'
 gem "recaptcha", :require => "recaptcha/rails"
+gem 'resque'

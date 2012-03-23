@@ -20,24 +20,21 @@ class Offer < ActiveRecord::Base
       :small  => "300x300>" }
 
   before_create do |offer| 
-
-    require 'process_offer'
-    require 'iconv'
-    require 'screenchot'
-
-    logger.debug "Processing link information ..."
-    crawl_link offer
     # process information
-
-    logger.debug "Processing link screenshot ..."
+    crawl_link offer
+  end  
+   
+  after_create do |offer|
     # process the screenshot
-    crawl_screenchot offer
-
+    Resque.enqueue(ScreenchotCrawler, offer.id)
   end
 
   private
     
     def crawl_link(offer)
+      require 'process_offer'
+
+      logger.debug "Processing link information ..."
       if offer.link.include?("www.infojobs.net")
         logger.debug "Oh! It's infojobs! We're going to crawl the fucker!"
         result = process_offer("infojobs", offer.link)
@@ -54,13 +51,6 @@ class Offer < ActiveRecord::Base
         offer.contract_hour = result["contract_hour"]
         offer.salary = result["salary"]
       end
-    end
-
-    def crawl_screenchot(offer)
-      title = Time.now.to_i.to_s
-      filename = "/tmp/" + title.gsub(/\s+/, "") + ".png"
-      screenchot(offer.link, filename)
-      offer.screenshot = File.new(filename)
     end
 
 end
