@@ -80,3 +80,8 @@ Precajobs::Application.configure do
 
 
 end
+
+Recaptcha.configure do |config|
+  config.public_key  = '6Lc3Ts8SAAAAAPiO7K62mYJrdiRPcHfczL9ue3EB'
+  config.private_key = '6Lc3Ts8SAAAAAJhelpyMVroJNsu2E2SNRis-zwhz'
+end
