@@ -1,5 +1,6 @@
 /* asset pipeline
 *= require precajobs
+*= require bootstrap
 *= require jquery.jgrowl
 */
 
