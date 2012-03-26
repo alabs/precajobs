@@ -1,5 +1,5 @@
-<div id="content">
-  <%= form_for @offer, :html => { :multipart => true } do |f| %>
+<div id="content" class="span9">
+  <%= form_for @offer, :html => { :multipart => true, :class => "form-horizontal" } do |f| %>
     <% if @offer.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
@@ -15,13 +15,13 @@
   <fieldset>
     <legend><%= formtype %> oferta precaria</legend>
   
-    <div class="clearfix">
-      <%= f.label :link, "Direccion (URL)" %>
-      <div class="input">
+    <div class="control-group">
+      <%= f.label :link, "Direccion (URL)", :class => "control-label" %>
+      <div class="controls">
         <% if params[:offer_link] %>
-          <%= f.text_field :link, :class => "span7", :autofocus => "autofocus", :value => params[:offer_link] %>
+          <%= f.text_field :link, :class => "span5", :autofocus => "autofocus", :value => params[:offer_link] %>
         <% else %>
-          <%= f.text_field :link, :class => "span7", :autofocus => "autofocus" %>
+          <%= f.text_field :link, :class => "span5", :autofocus => "autofocus" %>
         <% end %>
         <span class="add-on">
           <%= image_tag "ok.gif", :id => "ok", :style => "vertical-align:middle;", :class => "hidden" %>
@@ -30,84 +30,84 @@
       </div>
     </div>
 
-    <div class="clearfix">
-      <div class="input">
-        <%= link_to "Comprobar", "#", :id => "check_link", :class => "btn primary" %>
+    <div class="control-group">
+      <div class="controls">
+        <%= link_to "Comprobar", "#", :id => "check_link", :class => "btn btn-large primary" %>
       </div>
     </div>
   
-    <div class="clearfix tohide">
-      <%= f.label :title, "Título" %>
-      <div class="input">
-        <%= f.text_field :title, :class => "span7" %>
+    <div class="control-group tohide">
+      <%= f.label :title, "Título", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :title, :class => "span5" %>
       </div>
     </div>
 
-    <div class="clearfix tohide">
-      <%= f.label :description, "Descripción" %>
-      <div class="input">
-        <%= f.text_area :description, :rows => "10", :class => "span7" %>
+    <div class="control-group tohide">
+      <%= f.label :description, "Descripción", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :description, :rows => "10", :class => "span5" %>
       </div>
     </div>
 
-    <div class="clearfix tohide">
-      <%= f.label :title, "Estudios" %>
-      <div class="input">
-        <%= f.text_field :studies, :class => "span7" %>
+    <div class="control-group tohide">
+      <%= f.label :title, "Estudios", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :studies, :class => "span5" %>
       </div>
     </div>
 
-    <div class="clearfix tohide">
-      <%= f.label :title, "Experiencia" %>
-      <div class="input">
-        <%= f.text_field :experience, :class => "span7" %>
+    <div class="control-group tohide">
+      <%= f.label :title, "Experiencia", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :experience, :class => "span5" %>
       </div>
     </div>
 
-    <div class="clearfix tohide">
-      <%= f.label :description, "Requisitos mínimos" %>
-      <div class="input">
-        <%= f.text_area :requisites_min, :rows => "10", :class => "span7" %>
+    <div class="control-group tohide">
+      <%= f.label :description, "Requisitos mínimos", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :requisites_min, :rows => "10", :class => "span5" %>
       </div>
     </div>
 
-    <div class="clearfix tohide">
-      <%= f.label :description, "Requisitos deseados" %>
-      <div class="input">
-        <%= f.text_area :requisites_des, :rows => "10", :class => "span7" %>
+    <div class="control-group tohide">
+      <%= f.label :description, "Requisitos deseados", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :requisites_des, :rows => "10", :class => "span5" %>
       </div>
     </div>
 
-    <div class="clearfix tohide">
-      <%= f.label :title, "Tipo de contrato" %>
-      <div class="input">
-        <%= f.text_field :contract_type, :class => "span7" %>
+    <div class="control-group tohide">
+      <%= f.label :title, "Tipo de contrato", :class => "control-label", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :contract_type, :class => "span5" %>
       </div>
     </div>
 
-    <div class="clearfix tohide">
-      <%= f.label :title, "Duración del contrato" %>
-      <div class="input">
-        <%= f.text_field :contract_duration, :class => "span7" %>
+    <div class="control-group tohide">
+      <%= f.label :title, "Duración del contrato", :class => "control-label", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :contract_duration, :class => "span5" %>
       </div>
     </div>
 
-    <div class="clearfix tohide">
-      <%= f.label :title, "Horario" %>
-      <div class="input">
-        <%= f.text_field :contract_hour, :class => "span7" %>
+    <div class="control-group tohide">
+      <%= f.label :title, "Horario", :class => "control-label", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :contract_hour, :class => "span5" %>
       </div>
     </div>
 
-    <div class="clearfix tohide">
-      <%= f.label :title, "Salario" %>
-      <div class="input">
-        <%= f.text_field :salary, :class => "span7" %>
+    <div class="control-group tohide">
+      <%= f.label :title, "Salario", :class => "control-label", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :salary, :class => "span5" %>
       </div>
     </div>
 
-    <div class="clearfix">
-      <div class="input">
+    <div class="control-group">
+      <div class="controls">
         <%= recaptcha_tags %>
       </div>
     </div>
@@ -121,7 +121,7 @@
   <% end %>
 </div>
 
-<div class="sidebar">
+<div class="sidebar span3">
   <ul>
     <li>Pon la <b>dirección de la oferta (URL)</b> junto con un <b>resumen</b>. Si es de un sitio que conozcamos traeremos los datos y un pantallazo.</li>
     <li id="loading" class="hidden">

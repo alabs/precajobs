@@ -1,6 +1,6 @@
 /* asset pipeline
-*= require precajobs
 *= require bootstrap
+*= require precajobs
 *= require jquery.jgrowl
 */
 
@@ -36,13 +36,11 @@
     float: left;
     margin: 0;
     padding: 10px;
-    width: 615px;
 }
 
 .sidebar {
     float: right;
     padding: 0;
-    width: 280px;
 }
 
 .sidebar ul li {
@@ -85,6 +83,7 @@ a {
 .btn.primary {
   background-color: #151515;
   background-image: -moz-linear-gradient(center top , #424242, #1C1C1C);
+  color: white;
 }
 
 .action-sidebar {

@@ -10,9 +10,11 @@
 
   <div class="right">
     <% if @offer.screenshot? %>
-      <%= link_to "Ver pantallazo", @offer.screenshot.url, :class => "label success" %>
+      <%= link_to "Ver pantallazo", @offer.screenshot.url, :class => "label label-success" %>
     <% end %>
-    <%= link_to "Ver oferta original", @offer.link, :class => "label notice" %>
+    <%= link_to  @offer.link, :class => "label label-alert" do %>
+      Ver oferta original - bla
+    <% end %>
   </div>
 
   <table class="datostabulados">
@@ -30,11 +32,12 @@
 
 </div>
 
-<div id="content" class="mt1 full">
-  <% if @offer.comments.exists? %>
+<% if @offer.comments.exists? %>
+  <div id="content" class="mt1 full">
     <%= render :partial => "comments/list", :locals => { :resource => @offer } %>
-  <% end %>
-  <ul>
-    <li><%= render :partial => "comments/form", :locals => { :classes => "span4" } %></li>
-  </ul>
+  </div>
+<% end %>
+
+<div id="content" class="mt1">
+  <%= render :partial => "comments/form" %>
 </div>

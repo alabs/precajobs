@@ -16,3 +16,4 @@ es:
   recaptcha:
     errors:
       incorrect-captcha-sol: "Ha habido un error en el captcha"
+      verification_failed: "El captcha no se ha completado correctamente"

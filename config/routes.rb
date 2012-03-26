@@ -1,12 +1,12 @@
 Precajobs::Application.routes.draw do
 
-  devise_for :users, 
-    :path_names => { 
-      :sign_in => 'login', 
-      :sign_out => 'logout',
-      :sign_up => 'signup' 
-    },
-    :controllers => { :registrations => "devise/registrations" }
+  #devise_for :users, 
+  #  :path_names => { 
+  #    :sign_in => 'login', 
+  #    :sign_out => 'logout',
+  #    :sign_up => 'signup' 
+  #  },
+  #  :controllers => { :registrations => "devise/registrations" }
 
   resources :offers do 
     post 'comment', :on => :member
