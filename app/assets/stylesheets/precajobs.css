@@ -19,7 +19,7 @@ ul {
 
 #main-nav {
     height: 2.1em;
-    background: url("http://media.infojobs.net/portales/ij/app/sprites/sprite-xbackgrounds.png") repeat-x scroll 0 -250px transparent;
+    background: url("/assets/sprite-xbackgrounds.png") repeat-x scroll 0 -250px transparent;
 }
 
 #offers li{
@@ -52,7 +52,7 @@ ul {
 }
 
 #header-top-wrapper {
-    background: url("http://media.infojobs.net/app/backgrounds/bg-bar-20.png") repeat-x scroll 0 0 transparent;
+    background: url("/assets/bg-bar-20.png") repeat-x scroll 0 0 transparent;
     left: 0;
     padding: 0;
     position: absolute;
