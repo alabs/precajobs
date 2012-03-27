@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/brianmario/mysql2.git
+  revision: 42f7b3491fc47fa0f4ac1283b2d827f81ffcc8b3
+  specs:
+    mysql2 (0.3.11)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -67,7 +73,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.0.4)
-    mysql2 (0.2.6)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -173,7 +178,7 @@ DEPENDENCIES
   exception_notification
   jquery-rails
   json
-  mysql2
+  mysql2!
   nokogiri
   paperclip
   rails (= 3.1.1)
