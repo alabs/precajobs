@@ -10,14 +10,13 @@
     <% offers.each do |offer| %>
       <tr>
         <td>
-          <% if current_user %>
-            <% if offer.voted_by? current_user %> 
-              <%= image_tag "downvoted.png" %>
+            <% has_voted = offer.votes.where(:ip_address => request.remote_ip).count == 1 %>
+            <% if has_voted %>
+              <%= link_to (image_tag "downvoted.png"), '#', :class => "vote", "data-direction" => "down", "data-offer" => offer.id.to_s  %>
             <% else %>
               <%= link_to (image_tag "downvote.png"), '#', :class => "vote", "data-direction" => "down", "data-offer" => offer.id.to_s  %>
             <% end %>
-          <% end %>
-          <span class="votes-count" data-offer="<%= offer.id.to_s %>"><%= offer.plusminus %></span>
+          <span class="votes-count" data-offer="<%= offer.id.to_s %>"><%= offer.votes.count %></span>
         </td>
         <td class="vacant">
           <div class="cell-text">

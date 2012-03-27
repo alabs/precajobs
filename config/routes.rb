@@ -1,5 +1,7 @@
 Precajobs::Application.routes.draw do
 
+  resources :votes
+
   #devise_for :users, 
   #  :path_names => { 
   #    :sign_in => 'login', 
@@ -11,7 +13,7 @@ Precajobs::Application.routes.draw do
   resources :offers do 
     post 'comment', :on => :member
     post 'vote', :on => :member
-    get 'last', :on => :collection
+    get 'worst', :on => :collection
   end
 
   root :to => 'offers#index'

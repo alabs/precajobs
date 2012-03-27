@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ip address:</b>
+  <%= @vote.ip_address %>
+</p>
+
+<p>
+  <b>Offer:</b>
+  <%= @vote.offer_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_vote_path(@vote) %> |
+<%= link_to 'Back', votes_path %>

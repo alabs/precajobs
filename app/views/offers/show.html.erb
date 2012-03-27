@@ -1,23 +1,28 @@
 <div id="content" class="full">
 
- <div class="left">
-   <%# link_to (image_tag "upvote.png"), '#', :class => "vote", "data-direction" => "up", "data-offer" => @offer.id.to_s  %> <br />
-   <%= link_to (image_tag "downvote.png"), '#', :class => "vote", "data-direction" => "down", "data-offer" => @offer.id.to_s  %><br />
-   <span class="votes-count" data-offer="<%= @offer.id.to_s %>"><%= @offer.votes_for - @offer.votes_against %></span> <br />
- </div>
 
  <h1 class="title"><%= link_to @offer.title, @offer.link %></h1>
 
-  <div class="right">
+  <div class="right well">
+    <div style="text-align:center; margin-left:auto; margin-right:auto; margin:1em;">
+     <%= link_to (image_tag "downvote.png"), '#', :class => "vote", "data-direction" => "down", "data-offer" => @offer.id.to_s  %><br />
+     <span class="votes-count" data-offer="<%= @offer.id.to_s %>"><%= @offer.votes_count %></span> <br />
+   </div>
+
     <% if @offer.screenshot? %>
-      <%= link_to "Ver pantallazo", @offer.screenshot.url, :class => "label label-success" %>
+      <%= link_to @offer.screenshot.url, :class => "label label-success" do  %>
+        <i class="icon-camera"></i>
+        Ver pantallazo
+      <% end %>
     <% end %>
+    <br />
     <%= link_to  @offer.link, :class => "label label-alert" do %>
-      Ver oferta original - bla
+      <i class="icon-align-justify"></i>
+      Ver oferta original
     <% end %>
   </div>
 
-  <table class="datostabulados">
+  <table class="table" style="margin: 2em; width: 75%;">
     <%= render :partial => "field", :locals => {:field => @offer.description, :description => "Descripción"} %>
     <%= render :partial => "field", :locals => {:field => @offer.province, :description => "Provincia"} %>
     <%= render :partial => "field", :locals => {:field => @offer.studies, :description => "Estudios"} %>

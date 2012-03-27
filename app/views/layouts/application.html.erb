@@ -8,6 +8,14 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
     <div id="wrapper">
       <header>
@@ -16,15 +24,13 @@
             <div class="socialmedia">
               <ul>
                 <li>
-                  <iframe scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/follow_button.1324331373.html#_=1325431379516&amp;_version=2&amp;enableNewSizing=false&amp;id=twitter-widget-0&amp;lang=es&amp;screen_name=PrecaJobs&amp;show_count=false&amp;size=m" class="twitter-follow-button" style="width: 150px; height: 20px;" title="Twitter Follow Button"></iframe>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://precajobs.net" data-text="PrecaJobs.net - 9 de cada 10 ofertas precarias en Internet están aqui" data-via="precajobs" data-lang="es" data-related="precajobs" data-hashtags="precajobs">Twittear</a>
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                 </li>
                 <li class="gplusone">
-                  <div id="___plusone_0" style="height: 20px; width: 90px; display: inline-block; text-indent: 0pt; margin: 0pt; padding: 0pt; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline;"><iframe width="100%" scrolling="no" frameborder="0" title="+1" vspace="0" tabindex="-1" style="position: static; left: 0pt; top: 0pt; width: 90px; margin: 0px; border-style: none; height: 20px; visibility: visible;" src="https://plusone.google.com/_/+1/fastbutton?url=http%3A%2F%2Fprecajobs.net%2F&amp;size=medium&amp;count=true&amp;annotation=&amp;hl=es-ES&amp;jsh=m%3B%2F_%2Fapps-static%2F_%2Fjs%2Fwidget%2F__features__%2Frt%3Dj%2Fver%3DQj89meq-rmQ.es.%2Fsv%3D1%2Fam%3D!itqi7GDL5S6I4GqN1g%2Fd%3D1%2F#id=I1_1325431364802&amp;parent=http%3A%2F%2Fprecajobs.net&amp;rpctoken=807414976&amp;_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe" name="I1_1325431364802" marginwidth="0" marginheight="0" id="I1_1325431364802" hspace="0" allowtransparency="true"></iframe></div>
                 </li>
                 <li>
-                  <div id="fb-button">
-                    <fb:like show_faces="false" width="125" layout="button_count" send="false" href="http://es-es.facebook.com/InfoJobs" class=" fb_edge_widget_with_comment fb_iframe_widget"><span><iframe scrolling="no" id="f32ebd5bf2b7446" name="f1bdffbdf10b9be" style="border: medium none; overflow: hidden; height: 20px; width: 125px;" title="Like this content on Facebook." class="fb_ltr" src="https://www.facebook.com/plugins/like.php?channel_url=https%3A%2F%2Fs-static.ak.fbcdn.net%2Fconnect%2Fxd_proxy.php%3Fversion%3D3%23cb%3Df3847bf762461de%26origin%3Dhttp%253A%252F%252Fprecajobs.net%252Ff316e5198cb4a9e%26relation%3Dparent.parent%26transport%3Dpostmessage&amp;extended_social_context=false&amp;href=http%3A%2F%2Fes-es.facebook.com%2FPrecaJobs&amp;layout=button_count&amp;locale=es_ES&amp;node_type=link&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=125"></iframe></span></fb:like>
-                  </div>    
+                  <div class="fb-like" data-href="http://precajobs.net" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
                 </li>
               </ul>
             </div> <!-- SOCIAL MEDIA -->
@@ -39,8 +45,8 @@
         </div>
         <div id="main-nav">
           <ul id="offers" class="left">
-            <li><%= link_to "Peores", offers_path %></li>
-            <li><%= link_to "Últimas", last_offers_path %></li>
+            <li><%= link_to "Últimas", offers_path %></li>
+            <li><%= link_to "Peores", worst_offers_path %></li>
             <li><%= link_to "Agregar", new_offer_path %></li>
           </ul>
         </div>

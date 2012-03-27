@@ -4,11 +4,7 @@
   <% resource.comments.each do |comment| %>
     <li class="<%= cycle "grey", "white" %>">
       <span class="right"><%= comment.created_at %></span>
-      <% if user_signed_in? %>
-        <b><%= comment.user.username %></b> dijo:
-      <% else %>
-        <b>anon</b> dijo:
-      <% end %>
+      alguien dijo:
       <p>
         <blockquote>
           <p><%= comment.body %></p>

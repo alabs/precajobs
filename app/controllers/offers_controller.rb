@@ -7,14 +7,14 @@ class OffersController < ApplicationController
 
   # GET /offers
   def index
-    offers = Offer.plusminus_tally ({:ascending => true, :at_most => 5})
+    offers = Offer.all(:order => "created_at desc")
     @offers = offers.paginate(:page => params[:page])
     @title = "Peores ofertas"
   end
 
   # GET /offers/last
-  def last
-    offers = Offer.all(:order => "created_at desc")
+  def worst
+    offers = Offer.all(:order => "votes_count desc")
     @offers = offers.paginate(:page => params[:page])
     @title = "Últimas ofertas"
     render 'index'
@@ -72,33 +72,22 @@ class OffersController < ApplicationController
   def vote
     offer = Offer.find(params[:id])
 
-    if current_user.blank?
-      render :json => {'result' => 'anon' }
-      return
+    if params[:direction] == 'down'
+      offer.votes.create(:ip_address => request.remote_ip)
     end
 
-    if params[:direction] == 'up'
-      current_user.vote_exclusively_for(offer)
-    elsif params[:direction] == 'down'
-      current_user.vote_exclusively_against(offer)
-    end
-
-    votes = offer.votes_for - offer.votes_against
-    render :json => {'result' => 'OK', 'votes' => votes }
+    render :json => {'result' => 'OK', 'votes' => offer.votes.count }
   end
 
   # POST /offers/1/comment
   def comment
     @offer = Offer.find(params[:id])
-    if user_signed_in?
-      @comment = Comment.new(:user_id => current_user.id, :offer_id => @offer.id, :body => params[:comment][:body])
-    else
-      @comment = Comment.new(:offer_id => @offer.id, :body => params[:comment][:body])
-    end
+    @comment = Comment.new(:offer_id => @offer.id, :body => params[:comment][:body])
     if verify_recaptcha(:model => @comment, :message => "El captcha está incorrecto", :timeout => 10) and @comment.save
       flash[:notice] = 'El comentario se ha creado correctamente.'
       redirect_to @offer
     else
+      flash[:notice] = 'Ha habido un problema con el captcha.'
       redirect_to @offer
     end
   end

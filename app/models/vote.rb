@@ -1,17 +1,16 @@
 class Vote < ActiveRecord::Base
 
-  scope :for_voter, lambda { |*args| where(["voter_id = ? AND voter_type = ?", args.first.id, args.first.class.name]) }
-  scope :for_voteable, lambda { |*args| where(["voteable_id = ? AND voteable_type = ?", args.first.id, args.first.class.name]) }
-  scope :recent, lambda { |*args| where(["created_at > ?", (args.first || 2.weeks.ago)]) }
-  scope :descending, order("created_at DESC")
+  belongs_to :offer, :counter_cache => true
 
-  belongs_to :voteable, :polymorphic => true
-  belongs_to :voter, :polymorphic => true
+  @ip_regex = /^([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3}$/
 
-  attr_accessible :vote, :voter, :voteable
+  validates :ip_address, 
+          :presence => true, 
+          :format => { :with => @ip_regex } 
 
+  validates :offer_id, :uniqueness => {:scope => :ip_address}
 
-  # Comment out the line below to allow multiple votes per user.
-  validates_uniqueness_of :voteable_id, :scope => [:voteable_type, :voter_type, :voter_id]
-
+  def self.has_voted
+    self.where(:offer_id => offer)
+  end
 end

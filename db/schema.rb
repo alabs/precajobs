@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120103075556) do
+ActiveRecord::Schema.define(:version => 20120326100436) do
 
   create_table "comments", :force => true do |t|
     t.integer  "offer_id"
@@ -20,6 +20,22 @@ ActiveRecord::Schema.define(:version => 20120103075556) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "offers", :force => true do |t|
     t.string   "link"
@@ -40,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20120103075556) do
     t.string   "contract_hour"
     t.string   "salary"
     t.string   "province"
+    t.integer  "votes_count",             :default => 0
   end
 
   create_table "users", :force => true do |t|
@@ -66,17 +83,10 @@ ActiveRecord::Schema.define(:version => 20120103075556) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "votes", :force => true do |t|
-    t.boolean  "vote",          :default => false
-    t.integer  "voteable_id",                      :null => false
-    t.string   "voteable_type",                    :null => false
-    t.integer  "voter_id"
-    t.string   "voter_type"
+    t.string   "ip_address"
+    t.integer  "offer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "votes", ["voteable_id", "voteable_type"], :name => "index_votes_on_voteable_id_and_voteable_type"
-  add_index "votes", ["voter_id", "voter_type", "voteable_id", "voteable_type"], :name => "fk_one_vote_per_user_per_entity", :unique => true
-  add_index "votes", ["voter_id", "voter_type"], :name => "index_votes_on_voter_id_and_voter_type"
 
 end

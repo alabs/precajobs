@@ -3,9 +3,12 @@ class Offer < ActiveRecord::Base
   validates :link, :uniqueness => true
   validates :link, :presence => true
 
-  acts_as_voteable
-
+  has_many :votes
   has_many :comments
+
+#  default_scope :order => "votes_count DESC"
+
+
 
 #  validates :link, :title, :description, :summary, :screenshot_file_name, :presence => true
 
@@ -18,6 +21,7 @@ class Offer < ActiveRecord::Base
     :styles => {
       :thumb=> "200x200#",
       :small  => "300x300>" }
+
 
   before_create do |offer| 
     # process information
