@@ -6,16 +6,16 @@ set :branch,          "origin/master"
 set :migrate_target,  :current
 set :ssh_options,     { :forward_agent => true }
 set :rails_env,       "production"
-set :deploy_to,       "/var/www/precajobs.alabs.es"
+set :deploy_to,       "/var/www/precajobs.net"
 set :normalize_asset_timestamps, false
 
 set :user,            "ruby-data"
 set :group,           "ruby-data"
 set :use_sudo,        false
 
-role :web,    "test"
-role :app,    "test"
-role :db,     "test", :primary => true
+role :web,    "precajobs.net"
+role :app,    "precajobs.net"
+role :db,     "precajobs.net", :primary => true
 
 set(:latest_release)  { fetch(:current_path) }
 set(:release_path)    { fetch(:current_path) }
@@ -27,11 +27,11 @@ set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEA
 
 default_environment["RAILS_ENV"] = 'production'
 
-# Use our ruby-1.9.2-p290@precajobs gemset
-default_environment["PATH"]         = "/home/ruby-data/.rvm/gems/ruby-1.9.2-p290@precajobs/bin:/home/ruby-data/.rvm/gems/ruby-1.9.2-p290@global/bin:/home/ruby-data/.rvm/rubies/ruby-1.9.2-p290/bin:/home/ruby-data/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
-default_environment["GEM_HOME"]     = "/home/ruby-data/.rvm/gems/ruby-1.9.2-p290@precajobs"
-default_environment["GEM_PATH"]     = "/home/ruby-data/.rvm/gems/ruby-1.9.2-p290@precajobs:/home/ruby-data/.rvm/gems/ruby-1.9.2-p290@global"
-default_environment["RUBY_VERSION"] = "ruby-1.9.2-p290"
+# Use our ruby-1.9.2-p318@precajobs gemset
+default_environment["PATH"]         = "/home/ruby-data/.rvm/gems/ruby-1.9.2-p318@precajobs/bin:/home/ruby-data/.rvm/gems/ruby-1.9.2-p318@global/bin:/home/ruby-data/.rvm/rubies/ruby-1.9.2-p318/bin:/home/ruby-data/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+default_environment["GEM_HOME"]     = "/home/ruby-data/.rvm/gems/ruby-1.9.2-p318@precajobs"
+default_environment["GEM_PATH"]     = "/home/ruby-data/.rvm/gems/ruby-1.9.2-p318@precajobs:/home/ruby-data/.rvm/gems/ruby-1.9.2-p318@global"
+default_environment["RUBY_VERSION"] = "ruby-1.9.2-p318"
 
 default_run_options[:shell] = 'bash'
 
