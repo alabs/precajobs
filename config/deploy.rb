@@ -83,8 +83,10 @@ namespace :deploy do
     # save empty folders
     run <<-CMD
       rm -rf #{latest_release}/log #{latest_release}/public/system #{latest_release}/tmp/pids &&
+      rm -rf #{latest_release}/config/database.yml &&
       mkdir -p #{latest_release}/public &&
       mkdir -p #{latest_release}/tmp &&
+      ln -sf #{shared_path}/config/database.yml #{latest_release}/config/database.yml &&
       ln -sf #{shared_path}/log #{latest_release}/log &&
       ln -sf #{shared_path}/system #{latest_release}/public/system &&
       ln -sf #{shared_path}/pids #{latest_release}/tmp/pids &&

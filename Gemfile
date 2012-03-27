@@ -12,6 +12,7 @@ gem 'capistrano'
 gem 'ruby-debug19', :require => 'ruby-debug'
 gem 'json'
 gem 'exception_notification'
+gem 'mysql2'
 
 # plugins
 gem 'paperclip'
