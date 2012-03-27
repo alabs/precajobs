@@ -21,11 +21,11 @@ pid "/tmp/unicorn.precajobs.pid"
 if env == "production"
   # Help ensure your application will always spawn in the symlinked
   # "current" directory that Capistrano sets up.
-  working_directory "/var/www/precajobs.alabs.es/current"
+  working_directory "/var/www/precajobs.net/current"
 
   # feel free to point this anywhere accessible on the filesystem
   user 'ruby-data', 'ruby-data'
-  shared_path = "/var/www/precajobs.alabs.es/shared"
+  shared_path = "/var/www/precajobs.net/shared"
 
   stderr_path "#{shared_path}/log/unicorn.stderr.log"
   stdout_path "#{shared_path}/log/unicorn.stdout.log"
