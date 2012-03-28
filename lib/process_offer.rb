@@ -12,7 +12,7 @@ end
 def process_offer(site, url)
   case site
     when "infojobs"
-      url = URI.parse(URI.encode(url.strip.sub('https', 'http'))
+      url = URI.parse(URI.encode(url.strip.sub('https', 'http')))
       html = Nokogiri::HTML(open(url).read)
       result = { 
         'title' => html.xpath('//h1').text.strip, 
