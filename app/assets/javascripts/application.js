@@ -86,7 +86,9 @@ $(function() {
   $(".flash-messages").each(function() {
     var msg = $(this).children("p");
     var theme = $(this).children("p").attr("class");
-    notify(msg.text(), theme);
+    if ($(this).children("p").text() != ""){
+      notify(msg.text(), theme);
+    }
   });
 
 });
