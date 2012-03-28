@@ -108,14 +108,12 @@
 
     <div class="control-group">
       <div class="controls">
-        <%= recaptcha_tags %>
+        <%= recaptcha_tags :display => {:theme => "white"} %>
       </div>
     </div>
-
-
   
-    <div class="actions">
-      <%= f.submit "Crear oferta", :class => "btn primary" %>
+    <div class="form-actions actions">
+      <%= f.submit "Crear oferta", :class => "btn primary btn-large" %>
     </div>
   </fieldset>
   <% end %>

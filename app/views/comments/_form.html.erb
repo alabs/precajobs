@@ -1,7 +1,7 @@
 <%= form_for :comment, :url => comment_offer_path, :html => { :class => "span5" } do |f|  %>
     <legend> Agregar un comentario </legend>
     <%= f.text_area :body, :class => "span4", :rows => 5  %>
-    <%= recaptcha_tags %>
+    <%= recaptcha_tags :display => {:theme => "white"} %>
     <div class="actions action-sidebar">
       <%= f.submit "Agregar comentario", :class => "btn primary" %>
     </div>

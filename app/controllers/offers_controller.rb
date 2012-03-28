@@ -39,7 +39,7 @@ class OffersController < ApplicationController
   def create
     @offer = Offer.new(params[:offer])
 
-    if verify_recaptcha(:model => @offer, :timeout => 10) and @offer.save
+    if verify_recaptcha(:model => @offer, :timeout => 15) and @offer.save
       flash[:notice] = 'La oferta se ha creado correctamente.'
       redirect_to @offer
     else
