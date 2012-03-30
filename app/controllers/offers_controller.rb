@@ -72,7 +72,7 @@ class OffersController < ApplicationController
   def vote
     offer = Offer.find(params[:id])
 
-    logger.debug request.inspect
+    logger.info request.inspect
     if params[:direction] == 'down'
       offer.votes.create(:ip_address => request.remote_ip)
     end
