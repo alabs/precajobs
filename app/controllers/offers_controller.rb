@@ -73,8 +73,7 @@ class OffersController < ApplicationController
     offer = Offer.find(params[:id])
 
     logger.info "DEBUGGIN"
-    logger.info request.env["HTTP_X_FORWARDED_FOR"]
-    logger.info request.env["HTTP_X_FORWARDED_FOR"][0]
+    logger.info request.env["HTTP_X_FORWARDED_FOR"].split(',')[0]
     ip = request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip
     if params[:direction] == 'down'
       offer.votes.create(:ip_address => ip)
