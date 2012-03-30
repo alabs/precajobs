@@ -7,7 +7,7 @@ worker_processes 4
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-listen "/tmp/precajobs.socket", :backlog => 64
+#listen "/tmp/precajobs.socket", :backlog => 64
 
 # Preload our app for more speed
 preload_app true
@@ -29,6 +29,7 @@ if env == "production"
 
   stderr_path "#{shared_path}/log/unicorn.stderr.log"
   stdout_path "#{shared_path}/log/unicorn.stdout.log"
+
 end
 
 before_fork do |server, worker|
