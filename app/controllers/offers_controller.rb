@@ -1,6 +1,7 @@
 # encoding: utf-8
 class OffersController < ApplicationController
 
+  include VotesHelper
   require 'will_paginate/array'
 
   #before_filter :authenticate_user!, :except => [:index, :show, :last, :vote]
