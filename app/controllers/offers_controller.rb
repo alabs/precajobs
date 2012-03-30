@@ -72,9 +72,12 @@ class OffersController < ApplicationController
   def vote
     offer = Offer.find(params[:id])
 
-    logger.info request.inspect
+    logger.info "DEBUGGIN"
+    logger.info request.env["HTTP_X_FORWARDED_FOR"]
+    logger.info request.env["HTTP_X_FORWARDED_FOR"][0]
+    ip = request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip
     if params[:direction] == 'down'
-      offer.votes.create(:ip_address => request.remote_ip)
+      offer.votes.create(:ip_address => ip)
     end
 
     render :json => {'result' => 'OK', 'votes' => offer.votes.count }
