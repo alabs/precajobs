@@ -10,8 +10,7 @@
     <% offers.each do |offer| %>
       <tr>
         <td>
-            <% has_voted = offer.votes.where(:ip_address => request.remote_ip).count == 1 %>
-            <% if has_voted %>
+            <% if has_voted(offer) %>
               <%= link_to (image_tag "downvoted.png"), '#', :class => "vote", "data-direction" => "down", "data-offer" => offer.id.to_s  %>
             <% else %>
               <%= link_to (image_tag "downvote.png"), '#', :class => "vote", "data-direction" => "down", "data-offer" => offer.id.to_s  %>
