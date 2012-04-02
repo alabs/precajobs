@@ -1,5 +1,5 @@
-precajobs | encuentra tu trabajo precario
-=========
+precajobs.net 
+=============
 
 Aplicación web donde los usuarios cuelgan, votan y comentan las ofertas más precarias en el mercado laboral. 
 
@@ -9,16 +9,16 @@ Entorno de desarrollo
 Sistema Operativo: Ubuntu/Debian
 
 1. En caso de no tenerlo instalado, instalar RVM: http://beginrescueend.com/rvm/install/
-
+```shell
 $ sudo aptitude install curl
 $ bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
 $ rvm install 1.9.2 
-
+```
 2. Iniciar un gemset nuevo llamado precajobs e install bundler
-
+```shell
 $ rvm gemset create precajobs
 $ rvm gemset use precajobs
-
+```
 3. En caso de no tener que ejecutar el gemset use cada vez que querramos trabajar en el proyecto, lo recomendable es crear este fichero .rvmrc en la raiz del proyecto
 
 $ echo "rvm 1.9.2@precajobs" > .rvmrc
