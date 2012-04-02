@@ -10,14 +10,15 @@ Entorno de desarrollo
 
 Sistema Operativo: Ubuntu/Debian
 
-- En caso de no tenerlo instalado, instalar RVM: http://beginrescueend.com/rvm/install/
-
+- Descargar el código del proyecto:
 
     git clone http://github.com/alabs/precajobs
-    sudo aptitude install curl
-    bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
-    rvm install 1.9.2 
 
+- En caso de no tenerlo instalado, instalar RVM: http://beginrescueend.com/rvm/install/
+
+    $ sudo aptitude install curl
+    $ bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
+    $ rvm install 1.9.2 
 
 - Iniciar un gemset nuevo llamado precajobs e install bundler
 
@@ -31,10 +32,10 @@ Sistema Operativo: Ubuntu/Debian
 
 Por último, aceptar el uso de este entorno.
 
-- Instalar las dependencias necesarias, tanto las gemas como el cutycap (para los screenshots)
+- Instalar las dependencias necesarias, tanto las gemas como el cutycap (para los screenshots) y el servidor de redis para resque, la cola de trabajos que se utiliza para sacar los screenshots. 
 
     $ bundle install 
-    $ sudo aptitude install xvfb cutycap
+    $ sudo aptitude install xvfb cutycap redis-server
 
 - Crear la base de datos e iniciar el servidor web
 
@@ -42,4 +43,6 @@ Por último, aceptar el uso de este entorno.
     $ rake db:migrate
     $ unicorn_rails
 
-- Podrás acceder yendo a http://localhost:8080 - happy hacking!
+- Podrás acceder yendo a http://localhost:8080 
+
+- happy hacking!
