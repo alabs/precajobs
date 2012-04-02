@@ -148,7 +148,7 @@ ul {
     font-size: 1.1em;
     font-weight: bold;
     padding: 0.8em;
-    text-align: left;
+    text-align: center;
 }
 .listado th a:link, .listado th a:hover, .listado th a:visited {
     color: #F77518;

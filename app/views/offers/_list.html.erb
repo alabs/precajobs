@@ -1,8 +1,9 @@
-<table cellspacing="0" class="listado top-offers span7" summary="Ofertas de empleo destacadas" id="table_results_destacadas">
+<table cellspacing="0" class="listado top-offers span8" summary="Ofertas de empleo destacadas" id="table_results_destacadas">
   <thead>
     <tr>
       <th></th>
       <th>Puesto vacante</th>
+      <th>Comentarios</th>
       <th>Provincia</th>
     </tr>
   </thead>    
@@ -20,6 +21,11 @@
         <td class="vacant">
           <div class="cell-text">
             <%= link_to offer.title, offer, :class => "list-title" %>
+          </div>
+        </td>
+        <td class="comments">
+          <div class="cell-text">
+            <%= link_to offer.title, offer_path(offer, :anchor => "disqus_thread"), :class => "list-title" %>
           </div>
         </td>
         <td class="poblation">
