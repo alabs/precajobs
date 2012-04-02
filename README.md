@@ -12,9 +12,9 @@ Sistema Operativo: Ubuntu/Debian
 
 1. En caso de no tenerlo instalado, instalar RVM: http://beginrescueend.com/rvm/install/
 
-    $ sudo aptitude install curl
-    $ bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
-    $ rvm install 1.9.2 
+  $ sudo aptitude install curl
+  $ bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
+  $ rvm install 1.9.2 
 
 2. Iniciar un gemset nuevo llamado precajobs e install bundler
     $ rvm gemset create precajobs
