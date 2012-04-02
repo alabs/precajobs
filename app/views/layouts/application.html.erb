@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>precajobs | encuentra tu trabajo precario</title>
   <link rel="shortcut icon" href="/assets/favicon.png" type="image/png">
   <%= stylesheet_link_tag "application" %>
@@ -17,7 +18,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-    <div id="wrapper">
+    <div id="wrapper" class="row-fluid">
       <header>
         <div id="header-top-wrapper">
           <div id="header-top">
@@ -38,18 +39,16 @@
         </div> <!-- HEADER-TOP -->
         <div id="header-logo">
           <%= link_to image_tag("logo.png", :width => 150, :id => "logo", :alt => "PrecaJobs"), root_path %>
-          <div id="header-vacancies">
+          <span id="header-vacancies">
             <strong class="vacancies"><%= Offer.count %></strong>
             <em>puestos precarios</em>
-          </div>
+          </span>
         </div>
         <div id="main-nav">
           <ul id="offers" class="left">
             <li><%= link_to "Últimas", offers_path %></li>
             <li><%= link_to "Peores", worst_offers_path %></li>
-          </ul>
-          <ul id="offers" class="right">
-            <li><%= link_to "Agregar una oferta", new_offer_path %></li>
+            <li><i class="icon-plus"></i> <%= link_to "Agregar", new_offer_path %></li>
           </ul>
         </div>
       </header>
@@ -63,7 +62,7 @@
 
     </div>
 
-    <footer class="span12">
+    <footer>
       PrecaJobs 2012 - Código 
     </footer>
 

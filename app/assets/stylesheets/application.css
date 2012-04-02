@@ -1,5 +1,6 @@
 /* asset pipeline
 *= require bootstrap
+*= require bootstrap-responsive
 *= require precajobs
 *= require jquery.jgrowl
 */
@@ -31,9 +32,8 @@
     -moz-border-top-colors: none;
     background-color: #FFFFFF;
     border-color: #CCCCCC #C0C0C0 #C0C0C0 #CCCCCC;
-    border-style: solid;
     border-width: 1px;
-    float: left;
+  margin-right:auto;margin-left:auto; display:block;
     margin: 0;
     padding: 10px;
 }
@@ -68,7 +68,6 @@ a {
 }
 
 .full {
-  width: 98% !important ;
 }
 
 .screenshot {
@@ -78,12 +77,6 @@ a {
 .title {
   text-align: center;
   margin: 0.5em;
-}
-
-.btn.primary {
-  background-color: #151515;
-  background-image: -moz-linear-gradient(center top , #424242, #1C1C1C);
-  color: white;
 }
 
 .action-sidebar {
@@ -160,4 +153,15 @@ div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer {
 
 /* end flashes */
 
+.infobox { float:right; text-align:center; }
 
+
+@media all and (max-width: 520px) {
+
+  body {
+    background-color: black;
+  }
+
+  .infobox { float:none; text-align:center; }
+
+}

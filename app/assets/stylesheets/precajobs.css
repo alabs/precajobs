@@ -64,7 +64,6 @@ ul {
     height: 32px;
     margin: 0 auto;
     padding: 0 8px;
-    width: 970px;
     z-index: 0;
 }
 
@@ -86,10 +85,8 @@ ul {
 }
 
 #header-vacancies{
-    position: absolute;
-    right: 222px;
-    top: 51px;
-    width: 310px;
+    text-align: right;
+
 }
 
 #header-vacancies strong {

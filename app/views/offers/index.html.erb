@@ -1,30 +1,26 @@
-<div id="content" class="full">
+<div id="content">
 
   <div id="front-slogan">
     <p id="slogan">9 de cada 10 ofertas precarias en Internet están aquí</p>
     <span class="center" style="margin-top: 1em">
-      <%= link_to '¡Agrega una oferta!', new_offer_path, :class => "btn primary btn-large" %>
+      <%= link_to '¡Agrega una oferta!', new_offer_path, :class => "btn btn-inverse btn-large" %>
     </span>
   </div>
 
-
   <hr />
-
   <h2 class="title"><%= @title %></h2>
-  
   <%= render :partial => "list", :locals => { :offers => @offers } %> 
-
   <%= will_paginate @offers, :renderer => BootstrapPaginationHelper::LinkRenderer %>
 
   <div id="column">
     <p>
-    Arrastra este botón a tu barra de marcadores y haz click en él cuando veas una oferta precaria: <%= link_to "¡Oferta precaria!", "javascript:(function(){%20window.open('http://precajobs.net/offers/new?offer_link='+window.location.href);%20})();", :class => "btn" %>
+    Agrega este enlace a tu barra de marcadores y haz click en él cuando veas una oferta precaria: <%= link_to "¡Oferta precaria!", "javascript:(function(){%20window.open('http://precajobs.net/offers/new?offer_link='+window.location.href);%20})();", :class => "badge" %>
     </p>
-    <%= image_tag "http://placehold.it/160x600", :style => "display:inline;" %>
   </div>
 
-  <span class="center">
-    <%= link_to '¡Agrega una oferta!', new_offer_path, :class => "btn primary btn-large" %>
+  <span class="center span11">
+    <hr />
+    <%= link_to '¡Agrega una oferta!', new_offer_path, :class => "btn btn-inverse btn-large" %>
   </span>
 
 </div>
